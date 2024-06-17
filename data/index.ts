@@ -72,15 +72,15 @@ export const navItems = [
   export const projects = [
     {
       id: 1,
-      title: "3D Solar System Planets to Explore",
-      des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-      img: "/p1.svg",
+      title: "Vehicle Service Management System Web Project for Singhe Automotive PVT LTD (ITP Project)",
+      des: "Developed on the MERN stack technology. Singhe Automotive Company Private Limited is a meticulously designed and robust vehicle service management system that has been specifically tailored to optimize operations within the automotive service industry. This innovative cloud-based application offers a comprehensive suite of eight essential features, catering to various aspects of this service centers. These include sophisticated functionalities such as customer and feedback management, employee management, service and emergency service management, appointment and notice management, supplier management, inventory management, payment management, and finance management. By encompassing these key elements, we aim to revolutionize service center management by introducing a seamless and automated platform that efficiently handles daily tasks with precision and ease.",
+      img: "/mern-vsms (3).png",
       iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-      link: "/ui.earth.com",
+      link: "https://github.com/sachinprabuditha/mern-vsms",
     },
     {
       id: 2,
-      title: "Yoom - Video Conferencing App",
+      title: "Todo-Mobile-Application-Android-Kotlin (MAD Assignment)",
       des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
       img: "/p2.svg",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
