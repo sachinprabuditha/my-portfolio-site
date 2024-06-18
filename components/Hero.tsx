@@ -3,11 +3,30 @@ import { Spotlight } from './ui/Spotlight'
 import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import MagicButton from './ui/MagicButton'
 import { FaLocationArrow } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'
 
 
 const Hero = () => {
   return (
-    <div className='pb-20 pt-36'>
+    <div className='pb-20 pt-36 relative'>
+      {/* Profile section at the top */}
+      <div className='absolute top-0 left-0 w-full flex items-center justify-between p-4 bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg z-20'>
+        <div className='flex items-center'>
+          <img src="/Untitled design (1).png" alt="Profile" className='w-12 h-12 rounded-full mr-4' />
+          <h1 className='text-xl font-semibold text-black dark:text-white'>Sachin Prabuditha</h1>
+        </div>
+        <div className='flex space-x-4'>
+          <a href="https://www.linkedin.com/in/sachinprabuditha/" target="_blank" rel="noopener noreferrer" className='text-black dark:text-white'>
+            <FaLinkedin size={24} />
+          </a>
+          <a href="https://github.com/sachinprabuditha" target="_blank" rel="noopener noreferrer" className='text-black dark:text-white'>
+            <FaGithub size={24} />
+          </a>
+          <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer" className='text-black dark:text-white'>
+            <FaTwitter size={24} />
+          </a>
+        </div>
+      </div>
       <div>
         <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
           fill="white"/>
