@@ -112,7 +112,7 @@ export const navItems = [
     {
       id: 4,
       title: "MovieApp-Android-Mobile-Application Using Kotlin (MAD Assignment)",
-      des: "MovieApp is a feature-rich Android mobile application designed to provide users with comprehensive information about movies. MovieApp aims to enhance the movie-watching experience by offering detailed movie information, reviews, and ratings.",
+      des: "MovieApp is a feature-rich Android mobile Application designed to provide users with comprehensive information about movies. MovieApp aims to enhance the movie-watching experience by offering detailed movie information, reviews, and ratings.",
       img: "/ToDo (3).png",
       iconLists: ["/php-svgrepo-com.svg", "/xampp-svgrepo-com.svg", "/html-5-svgrepo-com.svg", "/sql-svgrepo-com.svg", "/css-3-svgrepo-com.svg"],
       link: "https://github.com/sachinprabuditha/online-land-sales-system-main",
