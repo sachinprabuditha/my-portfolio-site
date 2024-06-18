@@ -1,7 +1,6 @@
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
-    { name: "Testimonials", link: "#testimonials" },
     { name: "Contact", link: "#contact" },
   ];
   
@@ -59,7 +58,7 @@ export const navItems = [
     },
     {
       id: 6,
-      title: "This is My Email Address?",
+      title: "Do You want to Contact me? This is My Email Address",
       description: "",
       className: "md:col-span-2 md:row-span-1",
       imgClassName: "",
@@ -112,9 +111,9 @@ export const navItems = [
     },
     {
       id: 4,
-      title: "LandValt Online-Land-Sale-System PHP Web ( IWT Project )",
-      des: "LandValt is a comprehensive online land sales platform developed by a team of five as part of the Year 1, Semester 2, Information and Web Technologies (IWT) module. The system facilitates seamless buying and selling of land parcels, providing a user-friendly interface and robust backend functionality.",
-      img: "/Screenshot 2023-05-19 004618.png",
+      title: "MovieApp-Android-Mobile-Application Using Kotlin (MAD Assignment)",
+      des: "MovieApp is a feature-rich Android mobile application designed to provide users with comprehensive information about movies. MovieApp aims to enhance the movie-watching experience by offering detailed movie information, reviews, and ratings.",
+      img: "/ToDo (3).png",
       iconLists: ["/php-svgrepo-com.svg", "/xampp-svgrepo-com.svg", "/html-5-svgrepo-com.svg", "/sql-svgrepo-com.svg", "/css-3-svgrepo-com.svg"],
       link: "https://github.com/sachinprabuditha/online-land-sales-system-main",
     },
