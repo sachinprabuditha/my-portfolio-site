@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <div className='pb-20 pt-36 relative'>
       {/* Profile section at the top */}
-      <div className='absolute top-0 left-0 w-full flex items-center justify-between p-4 bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg z-20'>
+      <div className='fixed top-0 left-0 w-full flex items-center justify-between p-4 bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg z-20'>
         <div className='flex items-center'>
           <img src="/Untitled design (1).png" alt="Profile" className='w-12 h-12 rounded-full mr-4' />
           <h1 className='text-xl font-semibold text-black dark:text-white'>Sachin Prabuditha</h1>
@@ -53,7 +53,7 @@ const Hero = () => {
             Hi! I&apos;m Sachin Prabuditha, a Undergraduate Full Stack Developer based in Sri Lanka.
           </p>
 
-          <a href="#about">
+          <a href="/Sachin's CV Resume_2.pdf" download>
             <MagicButton
               title="Download My CV"
               icon={<FaDownload />}

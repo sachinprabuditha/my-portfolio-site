@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { FaLocationArrow } from "react-icons/fa";
 import { PinContainer } from "./ui/3d-pin";
-import { projects } from '@/data';
+import { projects} from '@/data';
 
 const RecentProjects = () => {
+
     return (
         <div className="py-20">
           <h1 className="heading">
@@ -13,7 +14,7 @@ const RecentProjects = () => {
           <div className="flex flex-wrap items-center justify-center p-4 gap-12 mt-10">
             {projects.map((item) => (
               <div
-                className=" h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+                className="sm:h-[25rem] lg:h-[29rem] flex items-center justify-center sm:w-96 w-[80vw] z-10"
                 key={item.id}
               >
                 <a href={item.link} target="_blank" rel="noopener noreferrer">

@@ -102,7 +102,7 @@ export const navItems = [
       link: "https://github.com/sachinprabuditha/online-land-sales-system-main",
     },
     {
-      id: 4,
+      id: 5,
       title: "Flying-Blaster-Android-Game-Kotlin (MAD Assignment)",
       des: "Flying Blaster is an engaging and dynamic Android mobile game. Fast-paced action with intuitive controls, challenging players to navigate through obstacles and defeat enemies. For storing game data like high score user preferences, enabling a personalized gaming experience. Fast-paced action with intuitive controls, challenging players to navigate through obstacles and defeat enemies. For storing game data like high score user preferences, enabling a personalized gaming experience.",
       img: "/ToDo (2).png",
@@ -110,7 +110,7 @@ export const navItems = [
       link: "https://github.com/sachinprabuditha/Flying-Blaster-Android-Kotlin-Game",
     },
     {
-      id: 4,
+      id: 6,
       title: "MovieApp-Android-Mobile-Application Using Kotlin (MAD Assignment)",
       des: "MovieApp is a feature-rich Android mobile Application designed to provide users with comprehensive information about movies. MovieApp aims to enhance the movie-watching experience by offering detailed movie information, reviews, and ratings.",
       img: "/ToDo (3).png",
