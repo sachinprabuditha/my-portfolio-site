@@ -6,7 +6,7 @@ import { projects} from '@/data';
 const RecentProjects = () => {
 
     return (
-        <div className="py-20">
+        <div className="py-20"  id='projects'>
           <h1 className="heading">
             These are my{" "}
             <span className="text-purple">recent projects</span>

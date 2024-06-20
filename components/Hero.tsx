@@ -8,12 +8,17 @@ import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'
 
 const Hero = () => {
   return (
-    <div className='pb-20 pt-36 relative'>
+    <div className='pb-20 pt-20 relative'>
       {/* Profile section at the top */}
       <div className='fixed top-0 left-0 w-full flex items-center justify-between p-4 bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg z-20'>
         <div className='flex items-center'>
           <img src="/Untitled design (1).png" alt="Profile" className='w-12 h-12 rounded-full mr-4' />
           <h1 className='text-xl font-semibold text-black dark:text-white'>Sachin Prabuditha</h1>
+        </div>
+        <div className='flex space-x-20'>
+          <a href="#home" className='text-white hover:text-purple transition duration-300'>Home</a>
+          <a href="#about" className='text-white hover:text-purple transition duration-300'>About</a>
+          <a href="#projects" className='text-white hover:text-purple transition duration-300'>Projects</a>
         </div>
         <div className='flex space-x-4'>
           <a href="https://www.linkedin.com/in/sachinprabuditha/" target="_blank" rel="noopener noreferrer" className='text-black dark:text-white'>
@@ -38,19 +43,19 @@ const Hero = () => {
 
       </div>
 
-      <div className="h-screen w-full dark:bg-black-100 bg-white  dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] absolute top-0 left-0 flex items-center justify-center">
+      <div className="h-screen w-full dark:bg-black-100 bg-white  dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] absolute top-0 left-0 flex items-center justify-center"  id='home'>
       {/* Radial gradient for the container to give a faded look */}
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"/>
       </div>
 
       <div className='flex justify-center relative my-20 z-10'>
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-100">Modern & Minimalist JS Mastery Portfolio</p>
 
           <TextGenerateEffect words="Transforming Concepts into Seamless User Experiences" className="text-center text-[40px] md:text-5xl lg:text-6xl"/>
 
-          <p className="text-center md:tracking-wider mb-12 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Sachin Prabuditha, a Undergraduate Full Stack Developer based in Sri Lanka.
+          <p className="text-center text-white-100 md:tracking-wider mb-12 text-sm md:text-lg">
+            Hi! I&apos;m Sachin Prabuditha, an undergraduate specializing in Software Engineering at SLIIT, based in Sri Lanka. As a passionate Full Stack Developer, I have a strong foundation in both front-end and back-end technologies.
+With hands-on experience in various programming languages and frameworks such as JavaScript, C, C++, Java, Python, React, Node.js, etc. I am committed to continuous learning and innovation in the tech industry.
           </p>
 
           <a href="/Sachin's CV Resume_2.pdf" download>
