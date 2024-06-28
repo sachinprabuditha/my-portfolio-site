@@ -5,15 +5,15 @@ import { projects } from '@/data';
 
 const RecentProjects = () => {
   return (
-    <div className="py-20" id='projects'>
+    <div className="py-40" id='projects'>
       <h1 className="heading">
         These are my{" "}
-        <span className="text-purple">recent projects</span>
+        <span className="text-purple">Recent Projects</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-12 mt-10">
         {projects.map((item) => (
           <div
-            className="sm:h-[25rem] lg:h-[29rem] flex items-center justify-center sm:w-96 w-[80vw] z-10"
+            className="sm:h-[25rem] lg:h-[29rem] flex items-center justify-center sm:w-96 w-[80vw] z-10 mt-10"
             key={item.id}
           >
             <PinContainer
@@ -32,7 +32,7 @@ const RecentProjects = () => {
                 <img
                   src={item.img}
                   alt="cover"
-                  className="z-10 absolute bottom-0"
+                  className="z-10 absolute h-full bottom-0"
                 />
               </div>
               
@@ -40,7 +40,7 @@ const RecentProjects = () => {
                   {item.title}
                 </h1>
                 <p
-                  className=" font-light text-sm line-clamp-2"
+                  className=" font-light text-sm line-clamp-3"
                   style={{
                     color: "#BEC1DD",
                     margin: "1vh 0",
