@@ -4,6 +4,7 @@ import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import MagicButton from './ui/MagicButton'
 import { FaDownload } from 'react-icons/fa'
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'
+import '../app/globals.css'
 
 
 const Hero = () => {
