@@ -65,8 +65,17 @@
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
   }
+  .backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
 }
 
+@supports not ((backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))) {
+  .backdrop-blur-lg {
+    background: rgba(255, 255, 255, 0.7); /* Or any other fallback you prefer */
+  }
+}
 @layer base {
   * {
     @apply border-border !scroll-smooth;
