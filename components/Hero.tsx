@@ -2,25 +2,25 @@ import React from 'react'
 import { Spotlight } from './ui/Spotlight'
 import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import MagicButton from './ui/MagicButton'
-import { FaDownload } from 'react-icons/fa'
-import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'
+import { FaDownload, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 
 
 const Hero = () => {
   return (
     <div className='pb-20 pt-20 relative'>
       {/* Profile section at the top */}
-      <div className='fixed top-0 left-0 w-full flex items-center justify-between p-4 bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg z-20'>
+      <div className='fixed top-0 left-0 w-full flex flex-col md:flex-row items-center justify-between p-4 bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg z-20'>
         <div className='flex items-center'>
-          <img src="./Untitled design (1).png" alt="Profile" className='w-12 h-12 rounded-full mr-4' />
+          <img src="./Untitled design (1).png" alt="Profile" className='w-12 h-12 rounded-full mr-4 mt-2' />
           <h1 className='text-xl font-semibold text-black dark:text-white'>Sachin Prabuditha</h1>
         </div>
-        <div className='flex space-x-20'>
-          <a href="#home" className='text-white hover:text-purple transition duration-300'>Home</a>
+        <div className='flex space-x-20 mt-2'>
+          <a href="#home" className='text-white hover:text-purple transition duration-300 md:text-xs'>Home</a>
           <a href="#about" className='text-white hover:text-purple transition duration-300'>About</a>
           <a href="#projects" className='text-white hover:text-purple transition duration-300'>Projects</a>
         </div>
-        <div className='flex space-x-4'>
+        <div className='flex space-x-4 mt-2'>
           <a href="https://www.linkedin.com/in/sachinprabuditha/" target="_blank" rel="noopener noreferrer" className='text-black dark:text-white'>
             <FaLinkedin size={24} />
           </a>
@@ -28,7 +28,7 @@ const Hero = () => {
             <FaGithub size={24} />
           </a>
           <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer" className='text-black dark:text-white'>
-            <FaTwitter size={24} />
+            <FaXTwitter size={24} />
           </a>
         </div>
       </div>
@@ -58,7 +58,7 @@ const Hero = () => {
 With hands-on experience in various programming languages and frameworks such as JavaScript, C, C++, Java, Python, React, Node.js, etc. I am committed to continuous learning and innovation in the tech industry.
           </p>
 
-          <a href="./Sachin's CV Resume_2.pdf" download>
+          <a href="./Sachin's CV Resume_2.pdf" download className="flex items-center justify-center">
             <MagicButton
               title="Download My CV"
               icon={<FaDownload />}
