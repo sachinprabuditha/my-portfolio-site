@@ -1,101 +1,134 @@
 "use client";
-import React, { useState } from 'react';
-import Lottie from 'react-lottie';
-import animationData from '@/data/confetti.json';
-import MagicButton from './ui/MagicButton';
-import { FaLocationArrow } from 'react-icons/fa';
+import React, { useState } from "react";
+import Link from "next/link";
+import { HiOutlineGift } from "react-icons/hi";
 
-const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState('');
+const EmailSection = () => {
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('Sending...');
+    const form = e.currentTarget;
+    const data = {
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      subject: (form.elements.namedItem("subject") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+    const JSONdata = JSON.stringify(data);
+    const endpoint = "/api/send";
 
-    const res = await fetch('/api/contact', {
-      method: 'POST',
+    // Form the request for sending data to the server.
+    const options = {
+      // The method is POST because we are sending data.
+      method: "POST",
+      // Tell the server we're sending JSON.
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, message }),
-    });
+      // Body of the request is the JSON data we created above.
+      body: JSONdata,
+    };
 
-    if (res.status === 200) {
-      setStatus('Message sent successfully!');
-      setName('');
-      setEmail('');
-      setMessage('');
+    const response = await fetch(endpoint, options);
+    const resData = await response.json();
+
+    if (response.status === 200) {
+      console.log("Message sent.");
+      setEmailSubmitted(true);
     } else {
-      setStatus('Failed to send message.');
+      console.error('Error sending message:', resData);
     }
   };
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
-
   return (
-    <section id="contact" className="py-20 mb-20 text-white">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-semibold text-center mb-12">Contact Me</h2>
-        <div className="flex flex-wrap -mx-6">
-          <div className="w-full lg:w-1/2 px-6 mb-12 lg:mb-0">
-            <div className="bg-black-200 text-white rounded-lg shadow-lg p-8">
-              <form onSubmit={handleSubmit}>
-                <div className="mb-6">
-                  <label className="block text-sm font-medium mb-2" htmlFor="name">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-3 py-2 border border-black-300 rounded"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                  />
-                </div>
-                <div className="mb-6">
-                  <label className="block text-sm font-medium mb-2" htmlFor="email">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-3 py-2 border border-black-300 rounded"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
-                <div className="mb-6">
-                  <label className="block text-sm font-medium mb-2" htmlFor="message">Message</label>
-                  <textarea
-                    id="message"
-                    className="w-full px-3 py-2 border border-black-300 rounded"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    required
-                  ></textarea>
-                </div>
-                <div className="text-center">
-                  <MagicButton title="Send Message" icon={undefined} position={''} />
-                </div>
-              </form>
-              {status && <p className="text-center mt-4">{status}</p>}
-            </div>
-          </div>
-          <div className="w-full lg:w-1/2 px-6 flex justify-center items-center">
-            <Lottie options={defaultOptions} height={400} width={400} />
-          </div>
+    <section
+      id="contact"
+      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
+    >
+      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
+      <div className="z-10">
+        <h5 className="text-xl font-bold text-white my-2">
+          Let&apos;s Connect
+        </h5>
+        <p className="text-[#ADB7BE] mb-4 max-w-md">
+          I&apos;m currently looking for new opportunities, my inbox is always
+          open. Whether you have a question or just want to say hi, I&apos;ll
+          try my best to get back to you!
+        </p>
+        <div className="socials flex flex-row gap-2">
+          <Link href="https://github.com">
+            <HiOutlineGift />
+          </Link>
+          <Link href="https://linkedin.com">
+            <HiOutlineGift />
+          </Link>
         </div>
+      </div>
+      <div>
+        {emailSubmitted ? (
+          <p className="text-green-500 text-sm mt-2">
+            Email sent successfully!
+          </p>
+        ) : (
+          <form className="flex flex-col" onSubmit={handleSubmit}>
+            <div className="mb-6">
+              <label
+                htmlFor="email"
+                className="text-white block mb-2 text-sm font-medium"
+              >
+                Your email
+              </label>
+              <input
+                name="email"
+                type="email"
+                id="email"
+                required
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                placeholder="jacob@google.com"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="subject"
+                className="text-white block text-sm mb-2 font-medium"
+              >
+                Subject
+              </label>
+              <input
+                name="subject"
+                type="text"
+                id="subject"
+                required
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                placeholder="Just saying hi"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="message"
+                className="text-white block text-sm mb-2 font-medium"
+              >
+                Message
+              </label>
+              <textarea
+                name="message"
+                id="message"
+                required
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                placeholder="Let's talk about..."
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+            >
+              Send Message
+            </button>
+          </form>
+        )}
       </div>
     </section>
   );
 };
 
-export default Contact;
+export default EmailSection;
