@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <div className='pb-20 pt-20 relative'>
       {/* Profile section at the top */}
-      <div className='fixed top-0 left-0 w-full flex items-center justify-between p-4 bg-white/10 dark:bg-black/0 bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg z-20'>
+      <div className='fixed top-0 left-0 w-full flex items-center justify-between p-4 bg-opacity-10 backdrop-filter backdrop-blur-md rounded-lg z-20'>
         <div className='flex items-center'>
           <img src="./Untitled design (1).png" alt="Profile" className='w-12 h-12 rounded-full mr-4' />
           <h1 className='text-xl font-semibold text-black dark:text-white'>Sachin Prabuditha</h1>
