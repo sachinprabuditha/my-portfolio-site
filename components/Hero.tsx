@@ -15,7 +15,7 @@ const Hero = () => {
           <img src="./Untitled design (1).png" alt="Profile" className='w-12 h-12 rounded-full mr-4' />
           <h1 className='text-xl font-semibold text-black dark:text-white'>Sachin Prabuditha</h1>
         </div>
-        <div className='flex space-x-20'>
+        <div className='hidden md:flex space-x-20'>
           <a href="#home" className='text-white hover:text-purple transition duration-300'>Home</a>
           <a href="#about" className='text-white hover:text-purple transition duration-300'>About</a>
           <a href="#projects" className='text-white hover:text-purple transition duration-300'>Projects</a>
@@ -32,14 +32,14 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <div>
-        <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+      <div className="">
+        <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20 h-[60vh] md:h-screen"
           fill="white"/>
         <Spotlight
-          className="h-[80vh] w-[50vw] top-10 left-full"
+          className="h-[40vh] md:h-[80vh] w-[50vw] top-10 left-full"
           fill="purple"
         />
-        <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />  
+        <Spotlight className="left-20 md:left-80 top-20 md:top-28 h-[40vh] md:h-[80vh] w-[50vw]" fill="blue" />  
 
       </div>
 
@@ -51,9 +51,9 @@ const Hero = () => {
       <div className='flex justify-center relative my-20 z-10'>
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
 
-          <TextGenerateEffect words="Transforming Concepts into Seamless User Experiences" className="text-center text-[40px] md:text-5xl lg:text-6xl"/>
+          <TextGenerateEffect words="Transforming Concepts into Seamless User Experiences" className="text-center text-[32px] md:text-5xl lg:text-6xl"/>
 
-          <p className="text-center text-white-100 md:tracking-wider mb-12 text-sm md:text-lg">
+          <p className="text-center text-black dark:text-white-200 md:tracking-wider mb-12 text-sm md:text-lg">
             Hi! I&apos;m Sachin Prabuditha, an undergraduate specializing in Software Engineering at SLIIT, based in Sri Lanka. As a passionate Full Stack Developer, I have a strong foundation in both front-end and back-end technologies.
 With hands-on experience in various programming languages and frameworks such as JavaScript, C, C++, Java, Python, React, Node.js, etc. I am committed to continuous learning and innovation in the tech industry.
           </p>
