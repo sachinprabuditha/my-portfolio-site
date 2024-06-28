@@ -1,78 +1,75 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react';
 import { FaLocationArrow } from "react-icons/fa";
 import { PinContainer } from "./ui/3d-pin";
-import { projects} from '@/data';
+import { projects } from '@/data';
 
 const RecentProjects = () => {
-
-    return (
-        <div className="py-20"  id='projects'>
-          <h1 className="heading">
-            These are my{" "}
-            <span className="text-purple">recent projects</span>
-          </h1>
-          <div className="flex flex-wrap items-center justify-center p-4 gap-12 mt-10">
-            {projects.map((item) => (
-              <div
-                className="sm:h-[25rem] lg:h-[29rem] flex items-center justify-center sm:w-96 w-[80vw] z-10"
-                key={item.id}
-              >
-                <a href={item.link} target="_blank" rel="noopener noreferrer">
-                <PinContainer
-                  title={item.title}
-                  href={item.link}
+  return (
+    <div className="py-20" id='projects'>
+      <h1 className="heading">
+        These are my{" "}
+        <span className="text-purple">recent projects</span>
+      </h1>
+      <div className="flex flex-wrap items-center justify-center p-4 gap-12 mt-10">
+        {projects.map((item) => (
+          <div
+            className="sm:h-[25rem] lg:h-[29rem] flex items-center justify-center sm:w-96 w-[80vw] z-10"
+            key={item.id}
+          >
+            <PinContainer
+              title={item.title}
+              href={item.link}
+            >
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
+                
+                <div
+                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
+                  style={{ backgroundColor: "#13162D" }}
                 >
-                  <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-                    <div
-                      className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                      style={{ backgroundColor: "#13162D" }}
-                    >
-                      <img src="/bg.png" alt="bgimg" />
-                    </div>
-                    <img
-                      src={item.img}
-                      alt="cover"
-                      className="z-10 absolute bottom-0"
-                    />
-                  </div>
-    
-                  <h1 className="font-bold md:text-xl text-base line-clamp-1">
-                    {item.title}
-                  </h1>
-    
-                  <p
-                    className=" font-light text-sm line-clamp-2"
-                    style={{
-                      color: "#BEC1DD",
-                      margin: "1vh 0",
-                    }}
-                  >
-                    {item.des}
-                  </p>
-    
-                  <div className="flex items-center justify-between mt-7 mb-3">
-                    <div className="flex items-center">
-                      {item.iconLists.map((icon, index) => (
-                        <div
-                          key={index}
-                          className="border border-white/[.2] rounded-full bg-black w-8 h-8 flex justify-center items-center"
-                          style={{
-                            transform: `translateX(-${5 * index + 2}px)`,
-                          }}
-                        >
-                          <img src={icon} alt="icon5" className="p-2" />
-                        </div>
-                      ))}
-                    </div>
-    
-                  </div>
-                </PinContainer>
-                </a>
+                  <img src="/bg.png" alt="bgimg" />
+                </div>
+                <img
+                  src={item.img}
+                  alt="cover"
+                  className="z-10 absolute bottom-0"
+                />
               </div>
-            ))}
+              
+                <h1 className="font-bold md:text-xl text-base line-clamp-1">
+                  {item.title}
+                </h1>
+                <p
+                  className=" font-light text-sm line-clamp-2"
+                  style={{
+                    color: "#BEC1DD",
+                    margin: "1vh 0",
+                  }}
+                >
+                  {item.des}
+                </p>
+              </a>
+              <div className="flex items-center justify-between mt-7 mb-3">
+                <div className="flex items-center">
+                  {item.iconLists.map((icon, index) => (
+                    <div
+                      key={index}
+                      className="border border-white/[.2] rounded-full bg-black w-8 h-8 flex justify-center items-center"
+                      style={{
+                        transform: `translateX(-${5 * index + 2}px)`,
+                      }}
+                    >
+                      <img src={icon} alt="icon5" className="p-2" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </PinContainer>
           </div>
-        </div>
-      );
-    };
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default RecentProjects
+export default RecentProjects;
