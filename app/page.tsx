@@ -15,6 +15,7 @@ export default function Home() {
         <Hero/>
         <Grid/>
         <RecentProjects/>
+        <Contact/>
       </div>
     </main>
   );
