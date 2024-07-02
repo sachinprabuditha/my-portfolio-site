@@ -1,7 +1,6 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-export default function MyFooter() {
+export default function Footer() {
   return (
     <footer className=" text-gray-300 py-10 border-t border-gray-700">
       <div className="container mx-auto px-4">

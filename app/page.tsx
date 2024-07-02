@@ -6,7 +6,7 @@ import Grid from "@/components/Grid";
 import RecentProjects from "@/components/RecentProjects";
 import { navItems } from "@/data";
 import Contact from "@/components/Contact";
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
