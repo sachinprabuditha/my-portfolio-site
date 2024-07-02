@@ -89,7 +89,7 @@ export const navItems = [
       id: 3,
       title: "CareQueue",
       des: "CareQueue is an innovative e-channeling system designed using Java and SQL as a Project of the 2nd Year 1st Semester Object-Oriented Programming (OOP) module.",
-      img: "./p3.svg",
+      img: "./CareQueue Logo.png",
       iconLists: ["./java-4-logo-svgrepo-com.svg", "./javascript-svgrepo-com.svg", "./mysql-svgrepo-com.svg", "./bootstrap-svgrepo-com.svg", "./css-3-svgrepo-com.svg"],
       link: "https://github.com/sachinprabuditha/E-Channeling-main",
     },

@@ -17,23 +17,23 @@ const Hero = () => {
           <img src="./Untitled design (1).png" alt="Profile" className='w-12 h-12 rounded-full mr-4' />
           <a href="#home" className='lg:text-xl md:text-sm font-semibold text-white hover:text-purple transition duration-300'>Sachin Prabuditha</a>
         </div>
-        <div className='hidden md:flex space-x-20'>
-          <a href="#home" className='text-white hover:text-purple transition duration-300'>Home</a>
-          <a href="#about" className='text-white hover:text-purple transition duration-300'>About</a>
-          <a href="#projects" className='text-white hover:text-purple transition duration-300'>Projects</a>
-          <a href="#contact" className='text-white hover:text-purple transition duration-300'>Contact</a>
+        <div className='hidden md:flex space-x-20 font-medium'>
+          <a href="#home" className='text-white hover:text-purple transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>Home</a>
+          <a href="#about" className='text-white hover:text-purple transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>About</a>
+          <a href="#projects" className='text-white hover:text-purple transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>Projects</a>
+          <a href="#contact" className='text-white hover:text-purple transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>Contact</a>
         </div>
         <div className='flex space-x-4'>
-          <a href="https://www.linkedin.com/in/sachinprabuditha/" target="_blank" rel="noopener noreferrer" className='text-white hover:text-purple transition duration-300'>
+          <a href="https://www.linkedin.com/in/sachinprabuditha/" target="_blank" rel="noopener noreferrer" className='text-white hover:text-blue-600 transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>
             <FaLinkedin size={24} />
           </a>
-          <a href="https://github.com/sachinprabuditha" target="_blank" rel="noopener noreferrer" className='text-white hover:text-purple transition duration-300'>
+          <a href="https://github.com/sachinprabuditha" target="_blank" rel="noopener noreferrer" className='text-white hover:text-purple transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>
             <FaGithub size={24} />
           </a>
-          <a href="https://www.instagram.com/sac_hin_pr?igsh=b256MWpvcnF2cGtl&utm_source=qr" target="_blank" rel="noopener noreferrer" className='text-white hover:text-purple transition duration-300'>
+          <a href="https://www.instagram.com/sac_hin_pr?igsh=b256MWpvcnF2cGtl&utm_source=qr" target="_blank" rel="noopener noreferrer" className='text-white hover:text-pink-600 transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>
             <FaInstagram size={24} />
           </a>
-          <a href="https://x.com/KSPrabuditha?" target="_blank" rel="noopener noreferrer" className='text-white hover:text-purple transition duration-300'>
+          <a href="https://x.com/KSPrabuditha?" target="_blank" rel="noopener noreferrer" className='text-white hover:text-white transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>
             <FaXTwitter size={24} />
           </a>
         </div>
@@ -64,10 +64,10 @@ const Hero = () => {
 With hands-on experience in various programming languages and frameworks such as JavaScript, C, C++, Java, Python, React, Node.js, etc. I am committed to continuous learning and innovation in the tech industry.
           </p>
 
-          <a href="./Sachin's CV.pdf" download>
+          <a href="./Sachin's CV.pdf" className='hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100 ' download>
             <MagicButton
               title="Download My CV"
-              icon={<FaDownload />}
+              icon={<FaDownload className='group-hover:translate-x-1 group-hover:-translate-y-1 transition-all animate-bounce'/>}
               position="right"
             />
           </a>
