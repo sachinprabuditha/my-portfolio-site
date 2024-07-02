@@ -7,6 +7,7 @@ import RecentProjects from "@/components/RecentProjects";
 import { navItems } from "@/data";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="max-w-7xl w-full">
         <Hero/>
         <Grid/>
+        <Skills/>
         <RecentProjects/>
         <Contact/>
         <Footer/>

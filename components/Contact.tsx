@@ -7,11 +7,14 @@ import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "../actions/sendEmail";
 import SubmitBtn from "./ui/submit-btn";
 import toast from "react-hot-toast";
+import { FaWhatsapp } from "react-icons/fa6";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const phoneNumber = '+94773546331'; 
 
   return (
+    
     <motion.section
       id="contact"
       ref={ref}
@@ -29,14 +32,21 @@ export default function Contact() {
         once: true,
       }}
     >
-      <SectionHeading>Contact me</SectionHeading>
+      <SectionHeading>Contact <span className="text-purple">Me</span></SectionHeading>
 
-      <p className="text-white/80 -mt-6">
+      <p className="text-white/80 -mt-1">
         Please contact me directly at{" "}
-        <a className="underline" href="mailto:sachinprabuditha@gmail.com">
+        <a className="text-white hover:text-red-600 transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100 underline" href="mailto:sachinprabuditha@gmail.com">
           sachinprabuditha@gmail.com
         </a>{" "}
         or through this form.
+      </p>
+      <p className="text-white/80 mt-1">
+        You can also reach me at {"(Whatsapp) "}
+        <a className="text-white hover:text-green-600 transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100 underline" href={`https://wa.me/${phoneNumber}`}>
+        <FaWhatsapp className="inline" size={20} /> {phoneNumber} 
+        </a>
+        
       </p>
 
       <form
