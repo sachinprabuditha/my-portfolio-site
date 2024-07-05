@@ -31,9 +31,9 @@ export default function Skills() {
     >
       <SectionHeading>My <span className="text-purple">Skills</span></SectionHeading>
       <ul className="flex flex-wrap justify-center gap-5 lg:text-lg md:text-base sm:text-sm text-gray-800 mt-20">
-      {skillsData.map((skill, index) => (
+        {skillsData.map((skill, index) => (
           <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
+            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80 flex items-center space-x-2"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -43,7 +43,8 @@ export default function Skills() {
             }}
             custom={index}
           >
-            {skill}
+            {skill.icon && <img src={skill.icon.src} alt={`${skill.name} icon`} className="w-6 h-6" />}
+            <span>{skill.name}</span>
           </motion.li>
         ))}
       </ul>

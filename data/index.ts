@@ -74,7 +74,7 @@ export const navItems = [
       title: "Singhe Automotive Pvt LTD",
       des: "Developed on the MERN stack technology(React, Node.js, Express, MongoDB). This is a Vehicle Service Management System built to SLIIT 2nd Year 2nd Semester IT Project.",
       img: "./mern-vsms (3)3.png",
-      iconLists: ["./re.svg", "./tail.svg", "./javascript-svgrepo-com.svg", "./vite-svgrepo-com.svg", "./fm.svg", "github-color-svgrepo-com.svg", "./mongo-svgrepo-com.svg", "./firebase-svgrepo-com.svg"],
+      iconLists: ["./re.svg", "./tail.svg", "./javascript-svgrepo-com.svg", "./vite-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./mongo-svgrepo-com.svg", "./firebase-svgrepo-com.svg", "./Insomnia.svg", "./Git.svg"],
       link: "https://github.com/sachinprabuditha/mern-vsms",
     },
     {
@@ -82,7 +82,7 @@ export const navItems = [
       title: "ToDo",
       des: "ToDo is task management Android mobile application developed individually by using Kotlin and Android Studio as part of the 2nd Year 2nd Semester Mobile Application Development module.",
       img: "./ToDo (1).png",
-      iconLists: ["./xml-document-svgrepo-com.svg", "./kotlin-svgrepo-com.svg", "./sqlite-svgrepo-com.svg", "./android-color-svgrepo-com.svg", "./github-color-svgrepo-com.svg"],
+      iconLists: ["./xml-document-svgrepo-com.svg", "./kotlin-svgrepo-com.svg", "./sqlite-svgrepo-com.svg", "./Android Studio.svg", "./github-color-svgrepo-com.svg", "./Git.svg"],
       link: "https://github.com/sachinprabuditha/Todo-Application-Android-Kotlin",
     },
     {
@@ -90,7 +90,7 @@ export const navItems = [
       title: "CareQueue",
       des: "CareQueue is an innovative e-channeling system designed using Java and SQL as a Project of the 2nd Year 1st Semester Object-Oriented Programming (OOP) module.",
       img: "./CareQueue Logo.png",
-      iconLists: ["./java-4-logo-svgrepo-com.svg", "./javascript-svgrepo-com.svg", "./mysql-svgrepo-com.svg", "./bootstrap-svgrepo-com.svg", "./css-3-svgrepo-com.svg"],
+      iconLists: ["./Java.svg", "./javascript-svgrepo-com.svg", "./mysql-svgrepo-com.svg", "./Bootstrap.svg", "./css-3-svgrepo-com.svg"],
       link: "https://github.com/sachinprabuditha/E-Channeling-main",
     },
     {
@@ -98,7 +98,7 @@ export const navItems = [
       title: "LandValt",
       des: "LandValt is a comprehensive online land sales platform developed by using HTML, PHP and SQL as part of the 1 st Year 2nd semester Information and Web Technologies (IWT) module.",
       img: "./Screenshot 2023-05-19 004618.png",
-      iconLists: ["./php-svgrepo-com.svg", "./xampp-svgrepo-com.svg", "./html-5-svgrepo-com.svg", "./sql-svgrepo-com.svg", "./css-3-svgrepo-com.svg"],
+      iconLists: ["./PHP.svg", "./xampp-svgrepo-com.svg", "./html-5-svgrepo-com.svg", "./sql-svgrepo-com.svg", "./css-3-svgrepo-com.svg"],
       link: "https://github.com/sachinprabuditha/online-land-sales-system-main",
     },
     {
@@ -106,7 +106,7 @@ export const navItems = [
       title: "Flying Blaster",
       des: "Flying Blaster is an Android mobile game developed individually by using Kotlin and Android Studio as part of the 2nd Year 2nd Semester Mobile Application Development module.",
       img: "./ToDo (2).png",
-      iconLists: ["./xml-document-svgrepo-com.svg", "./kotlin-svgrepo-com.svg", "./android-color-svgrepo-com.svg", "./sql-svgrepo-com.svg"],
+      iconLists: ["./xml-document-svgrepo-com.svg", "./kotlin-svgrepo-com.svg", "./Android Studio.svg", "./sql-svgrepo-com.svg"],
       link: "https://github.com/sachinprabuditha/Flying-Blaster-Android-Kotlin-Game",
     },
     {
@@ -114,8 +114,16 @@ export const navItems = [
       title: "MovieApp",
       des: "MovieApp is an Android mobile Application designed to provide information about movies. MovieApp aims to enhance the movie-watching experience and information, reviews, and ratings.",
       img: "./ToDo (3).png",
-      iconLists: ["./php-svgrepo-com.svg", "./xampp-svgrepo-com.svg", "./html-5-svgrepo-com.svg", "./sql-svgrepo-com.svg", "./css-3-svgrepo-com.svg"],
+      iconLists: ["./xml-document-svgrepo-com.svg", "./kotlin-svgrepo-com.svg", "./Android Studio.svg"],
       link: "https://github.com/sachinprabuditha/MovieApp-Android-Mobile-Application-",
+    },
+    {
+      id: 7,
+      title: "X-Clone",
+      des: "X-Clone is an Social Media Application designed from clonning X(Twitter). X-Clone aims to  facilitate the creation, sharing and aggregation of content, ideas, interests.",
+      img: "./-Clone.png",
+      iconLists: ["./next.svg", "./re.svg", "./tail.svg", "./javascript-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./firebase-svgrepo-com.svg"],
+      link: "https://github.com/sachinprabuditha/x-next-clone.git",
     },
   ];
   
