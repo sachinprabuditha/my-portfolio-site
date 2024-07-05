@@ -6,7 +6,7 @@ import TsIcon from "@/public/ts.svg";
 import ReactIcon from "@/public/react-svgrepo-com.svg";
 import NextJsIcon from "@/public/next.svg";
 import NodeJsIcon from "@/public/Node.js.svg";
-import GitIcon from "@/public/Git.svg";
+import GitIcon from "@/public/Git1.svg";
 import TailwindIcon from "@/public/tail.svg";
 import MongoDbIcon from "@/public/mongo-svgrepo-com.svg";
 import Java from "@/public/Java.svg";

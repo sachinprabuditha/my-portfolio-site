@@ -74,7 +74,7 @@ export const navItems = [
       title: "Singhe Automotive Pvt LTD",
       des: "Developed on the MERN stack technology(React, Node.js, Express, MongoDB). This is a Vehicle Service Management System built to SLIIT 2nd Year 2nd Semester IT Project.",
       img: "./mern-vsms (3)3.png",
-      iconLists: ["./re.svg", "./tail.svg", "./javascript-svgrepo-com.svg", "./vite-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./mongo-svgrepo-com.svg", "./firebase-svgrepo-com.svg", "./Insomnia.svg", "./Git.svg"],
+      iconLists: ["./re.svg", "./tail.svg", "./javascript-svgrepo-com.svg", "./vite-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./mongo-svgrepo-com.svg", "./firebase-svgrepo-com.svg", "./Insomnia.svg", "./Git1.svg"],
       link: "https://github.com/sachinprabuditha/mern-vsms",
     },
     {
@@ -82,7 +82,7 @@ export const navItems = [
       title: "ToDo",
       des: "ToDo is task management Android mobile application developed individually by using Kotlin and Android Studio as part of the 2nd Year 2nd Semester Mobile Application Development module.",
       img: "./ToDo (1).png",
-      iconLists: ["./xml-document-svgrepo-com.svg", "./kotlin-svgrepo-com.svg", "./sqlite-svgrepo-com.svg", "./Android Studio.svg", "./github-color-svgrepo-com.svg", "./Git.svg"],
+      iconLists: ["./xml-document-svgrepo-com.svg", "./kotlin-svgrepo-com.svg", "./sqlite-svgrepo-com.svg", "./Android Studio.svg", "./github-color-svgrepo-com.svg", "./Git1.svg"],
       link: "https://github.com/sachinprabuditha/Todo-Application-Android-Kotlin",
     },
     {
@@ -122,7 +122,7 @@ export const navItems = [
       title: "X-Clone",
       des: "X-Clone is an Social Media Application designed from clonning X(Twitter). X-Clone aims to  facilitate the creation, sharing and aggregation of content, ideas, interests.",
       img: "./-Clone.png",
-      iconLists: ["./next.svg", "./re.svg", "./tail.svg", "./javascript-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./firebase-svgrepo-com.svg"],
+      iconLists: ["./next.svg", "./re.svg", "./tail.svg", "./javascript-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./firebase-svgrepo-com.svg", "./Git1.svg"],
       link: "https://github.com/sachinprabuditha/x-next-clone.git",
     },
   ];
