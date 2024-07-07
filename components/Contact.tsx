@@ -32,7 +32,7 @@ export default function Contact() {
         once: true,
       }}
     >
-      <SectionHeading>Contact <span className="text-purple">Me</span></SectionHeading>
+      <SectionHeading>Contact <span className="text-purple">Me ☎️</span></SectionHeading>
 
       <p className="text-white/80 -mt-1">
         Please contact me directly at{" "}

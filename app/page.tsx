@@ -8,6 +8,7 @@ import { navItems } from "@/data";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Skills from "@/components/Skills";
+import Education from "@/components/ui/Education";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero/>
         <Grid/>
         <Skills/>
+        <Education/>
         <RecentProjects/>
         <Contact/>
         <Footer/>

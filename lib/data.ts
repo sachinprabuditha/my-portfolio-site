@@ -27,7 +27,8 @@ import Ps from "@/public/photoshop-svgrepo-com.svg"
 import Il from "@/public/adobe-illustrator-svgrepo-com.svg"
 import R from "@/public/R.svg"
 import Inso from "@/public/Insomnia.svg"
-
+import Scl from "@/public/download.png"
+import Sliit from "@/public/Sliit.png"
 
 export const links = [
   {
@@ -88,6 +89,33 @@ export const skillsData = [
   { name: "Insomnia", icon: Inso },
   
 ] as const;
+
+// data.js or data.ts
+export const educationData = [
+  {
+    institution: "Sri Lanka Institute of Information Technology",
+    degree: "BSc (Hons) in Information Technology Specialising in Software Engineering",
+    duration: "March 2022 - Present",
+    details: [
+      "I am currently pursuing a Bachelor of Science (Hons) in Information Technology degree Specialising in Software Engineering.",
+      "Throughout my university tenure, I have actively contributed to various clubs and successfully executed numerous projects, showcasing my dedication and proficiency in both academic and practical domains.",
+    ],
+    logo: Sliit,
+  },
+  {
+    institution: "H/ Vijayaba National School",
+    degree: "Primary to Advanced level",
+    duration: "January 2006 - March 2021",
+    details: [
+      "I attended Hungama Vijayaba National College from my primary education through the Advanced Level Examinations",
+      "This school played a crucial role in my academic journey, contributing significantly to my success in the Ordinary Level examinations where I achieved high grades, with A grades in 6 subjects and B grades in 2 subjects and a C grade. (A-6, B-3, C-1)",
+      "During this period, I selected Combine Maths, Physics, and ICT as my subjects.",
+      "This strategic choice not only facilitated my successful attainment of a B Pass and 2 S Passes (BSS) in the Advanced Level examinations but also paved the way for the realization of my aspirations to enter university.",
+    ],
+    logo: Scl,
+  },
+] as const;
+ 
 
 export function map(arg0: (skill: string | number | bigint | boolean | Promise<React.AwaitedReactNode> | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | import("framer-motion").MotionValue<number> | import("framer-motion").MotionValue<string> | null | undefined, index: React.Key | null | undefined) => React.JSX.Element): React.ReactNode {
     throw new Error("Function not implemented.");
