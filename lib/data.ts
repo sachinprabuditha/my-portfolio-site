@@ -93,9 +93,9 @@ export const skillsData = [
 // data.js or data.ts
 export const educationData = [
   {
-    institution: "Sri Lanka Institute of Information Technology",
+    institution: "Sri Lanka Institute of Information Technology - Malabe",
     degree: "BSc (Hons) in Information Technology Specialising in Software Engineering",
-    duration: "March 2022 - Present",
+    duration: "Oct 2022 - Present",
     details: [
       "I am currently pursuing a Bachelor of Science (Hons) in Information Technology degree Specialising in Software Engineering.",
       "Throughout my university tenure, I have actively contributed to various clubs and successfully executed numerous projects, showcasing my dedication and proficiency in both academic and practical domains.",
@@ -103,12 +103,12 @@ export const educationData = [
     logo: Sliit,
   },
   {
-    institution: "H/ Vijayaba National School",
+    institution: "H/ Vijayaba National School - Hungama",
     degree: "Primary to Advanced level",
-    duration: "January 2006 - March 2021",
+    duration: "January 2006 - Oct 2020",
     details: [
       "I attended Hungama Vijayaba National College from my primary education through the Advanced Level Examinations",
-      "This school played a crucial role in my academic journey, contributing significantly to my success in the Ordinary Level examinations where I achieved high grades, with A grades in 6 subjects and B grades in 2 subjects and a C grade. (A-6, B-3, C-1)",
+      "This school played a crucial role in my academic journey, contributing significantly to my success in the Ordinary Level examinations (In English Medium) where I achieved high grades, with A grades in 6 subjects and B grades in 2 subjects and a C grade. (A-6, B-3, C-1)",
       "During this period, I selected Combine Maths, Physics, and ICT as my subjects.",
       "This strategic choice not only facilitated my successful attainment of a B Pass and 2 S Passes (BSS) in the Advanced Level examinations but also paved the way for the realization of my aspirations to enter university.",
     ],
