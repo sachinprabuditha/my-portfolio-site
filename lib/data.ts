@@ -29,6 +29,7 @@ import R from "@/public/R.svg"
 import Inso from "@/public/Insomnia.svg"
 import Scl from "@/public/download.png"
 import Sliit from "@/public/Sliit.png"
+import motion from "@/public/fm.svg";
 
 export const links = [
   {
@@ -83,6 +84,7 @@ export const skillsData = [
   { name: "PHP", icon: Php },
   { name: "Bootstrap", icon: Boost },
   { name: "Python", icon: Phython },
+  { name: "Framer Motion", icon: motion },
   { name: "Photoshop", icon: Ps },
   { name: "Illustrator", icon: Il },
   { name: "R", icon: R },
@@ -108,7 +110,7 @@ export const educationData = [
     duration: "January 2006 - Oct 2020",
     details: [
       "I attended Hungama Vijayaba National College from my primary education through the Advanced Level Examinations",
-      "This school played a crucial role in my academic journey, contributing significantly to my success in the Ordinary Level examinations (In English Medium) where I achieved high grades, with A grades in 6 subjects and B grades in 2 subjects and a C grade. (A-6, B-3, C-1)",
+      "This school played a crucial role in my academic journey, contributing significantly to my success in the Ordinary Level examinations (In English Medium) where I achieved high grades, with A grades in 6 subjects and B grades in 2 subjects and a C grade. (A-6, B-2, C-1)",
       "During this period, I selected Combine Maths, Physics, and ICT as my subjects.",
       "This strategic choice not only facilitated my successful attainment of a B Pass and 2 S Passes (BSS) in the Advanced Level examinations but also paved the way for the realization of my aspirations to enter university.",
     ],
