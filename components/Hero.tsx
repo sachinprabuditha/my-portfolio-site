@@ -26,16 +26,16 @@ const Hero = () => {
         </div>
         <div className='ml-2 flex space-x-4'>
           <a href="https://www.linkedin.com/in/sachinprabuditha/" target="_blank" rel="noopener noreferrer" className='text-white hover:text-blue-600 transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>
-            <FaLinkedin className='w-5 h-5 md:w-8 md:h-8' />
+            <FaLinkedin className='w-4 h-4 md:w-6 md:h-6' />
           </a>
           <a href="https://github.com/sachinprabuditha" target="_blank" rel="noopener noreferrer" className='text-white hover:text-purple transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>
-            <FaGithub className='w-5 h-5 md:w-8 md:h-8' />
+            <FaGithub className='w-4 h-4 md:w-6 md:h-6' />
           </a>
           <a href="https://medium.com/@ksachinprabuditha" target="_blank" rel="noopener noreferrer" className='text-white hover:text-white-100 transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>
-            <FaMedium className='w-5 h-5 md:w-8 md:h-8' />
+            <FaMedium className='w-4 h-4 md:w-6 md:h-6' />
           </a>
           <a href="https://www.instagram.com/sac_hin_pr?igsh=b256MWpvcnF2cGtl&utm_source=qr" target="_blank" rel="noopener noreferrer" className='text-white hover:text-pink-600 transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>
-            <FaInstagram className='w-5 h-5 md:w-8 md:h-8' />
+            <FaInstagram className='w-4 h-4 md:w-6 md:h-6' />
           </a>
           
         </div>
