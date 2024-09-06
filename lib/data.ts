@@ -30,9 +30,9 @@ import Inso from "@/public/Insomnia.svg"
 import Scl from "@/public/download.png"
 import Sliit from "@/public/Sliit.png"
 import motion from "@/public/fm.svg";
-import flutter from "@/public/flutter.svg";
-import dart from "@/public/dart.svg";
-import vercel from "@/public/vercel.svg";
+import flutter from "@/public/Flutter.svg";
+import dart from "@/public/Dart.svg";
+import vercel from "@/public/Vercel.svg";
 
 export const links = [
   {
