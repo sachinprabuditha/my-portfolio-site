@@ -30,6 +30,9 @@ import Inso from "@/public/Insomnia.svg"
 import Scl from "@/public/download.png"
 import Sliit from "@/public/Sliit.png"
 import motion from "@/public/fm.svg";
+import flutter from "@/public/flutter.svg";
+import dart from "@/public/dart.svg";
+import vercel from "@/public/vercel.svg";
 
 export const links = [
   {
@@ -89,6 +92,9 @@ export const skillsData = [
   { name: "Illustrator", icon: Il },
   { name: "R", icon: R },
   { name: "Insomnia", icon: Inso },
+  { name: "Vercel", icon: vercel },
+  { name: "Flutter", icon: flutter },
+  { name: "Dart", icon: dart },
   
 ] as const;
 
@@ -99,7 +105,7 @@ export const educationData = [
     degree: "BSc (Hons) in Information Technology Specialising in Software Engineering",
     duration: "Oct 2022 - Present",
     details: [
-      "I am currently pursuing a Bachelor of Science (Hons) in Information Technology degree Specialising in Software Engineering.",
+      "I am currently pursuing a Bachelor of Science (Hons) in Information Technology degree Specializing in Software Engineering.",
       "Throughout my university tenure, I have actively contributed to various clubs and successfully executed numerous projects, showcasing my dedication and proficiency in both academic and practical domains.",
     ],
     logo: Sliit,
