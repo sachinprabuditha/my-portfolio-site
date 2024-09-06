@@ -102,7 +102,7 @@ export const skillsData = [
 export const educationData = [
   {
     institution: "Sri Lanka Institute of Information Technology - Malabe",
-    degree: "BSc (Hons) in Information Technology Specialising in Software Engineering",
+    degree: "BSc (Hons) in Information Technology Specializing in Software Engineering",
     duration: "Oct 2022 - Present",
     details: [
       "I am currently pursuing a Bachelor of Science (Hons) in Information Technology degree Specializing in Software Engineering.",
