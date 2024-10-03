@@ -125,6 +125,14 @@ export const navItems = [
       iconLists: ["./next.svg", "./re.svg", "./tail.svg", "./javascript-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./firebase-svgrepo-com.svg", "./Git1.svg"],
       link: "https://github.com/sachinprabuditha/x-next-clone.git",
     },
+    {
+      id: 8,
+      title: "VisionCart",
+      des: "Developed a voice-controlled shopping app for visually impaired users, text-to-speech. My role included user registration, profile management, and admin user management.",
+      img: "./VisionCart1.jpg",
+      iconLists: ["./Flutter.svg", "./Dart.svg", "./firebase-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./Git1.svg"],
+      link: "https://github.com/sachinprabuditha/x-next-clone.git",
+    },
   ];
   
   export const testimonials = [
