@@ -131,7 +131,7 @@ export const navItems = [
       des: "Developed a voice-controlled shopping app for visually impaired users, text-to-speech. My role included user registration, profile management, and admin user management.",
       img: "./VisionCart1.jpg",
       iconLists: ["./Flutter.svg", "./Dart.svg", "./firebase-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./Git1.svg"],
-      link: "https://github.com/sachinprabuditha/x-next-clone.git",
+      link: "https://github.com/sachinprabuditha/visioncart.git",
     },
   ];
   
