@@ -133,6 +133,22 @@ export const navItems = [
       iconLists: ["./Flutter.svg", "./Dart.svg", "./firebase-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./Git1.svg"],
       link: "https://github.com/sachinprabuditha/visioncart.git",
     },
+    {
+      id: 9,
+      title: "PetPal",
+      des: "Pet Pal is a mobile app designed to help pet owners manage their pets' health and well-being. It offers features like pet registration, vaccination tracking, doctor appointment booking, pet adoption, and a community platform for pet owners to connect and share advice.",
+      img: "./PetPal.jpg",
+      iconLists: ["./Flutter.svg", "./Dart.svg", "./firebase-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./Git1.svg"],
+      link: "https://github.com/sachinprabuditha/petpal.git",
+    },
+    {
+      id: 10,
+      title: "EcoCollect",
+      des: "Developed an intelligent system to streamline waste collection in urban environments. The solution monitors waste bin levels, manages collection schedules dynamically, and classifies waste into categories such as e-waste, plastic, and organic. ",
+      img: "./EcoCollector (2).png",
+      iconLists: ["./Flutter.svg", "./Dart.svg", "./firebase-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./Git1.svg"],
+      link: "https://github.com/sachinprabuditha/EcoCollect--smart_waste_management_system.git",
+    },
   ];
   
   export const testimonials = [
