@@ -63,7 +63,7 @@ const Hero = () => {
 
           <p className=" text-black dark:text-white-200 md:tracking-wider mb-12 text-sm md:text-lg">
             Hi! I&apos;m Sachin Prabuditha, an undergraduate specializing in Software Engineering at SLIIT, based in Sri Lanka. As a passionate Full Stack Developer, I have a strong foundation in both front-end and back-end technologies.
-With hands-on experience in various programming languages and frameworks such as JavaScript, C, C++, Java, Python, React, Next.js, Node.js, etc. I am committed to continuous learning and innovation in the tech industry.
+With hands-on experience in various programming languages and frameworks such as JavaScript, C, C++, Java, Python, React, Next.js, Node.js, Flutter etc. I am committed to continuous learning and innovation in the tech industry.
           </p>
 
           <a href="./Sachin's CV-Resume.pdf" className='hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100 ' download>
