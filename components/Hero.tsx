@@ -66,7 +66,7 @@ const Hero = () => {
 With hands-on experience in various programming languages and frameworks such as JavaScript, C, C++, Java, Python, React, Next.js, Node.js, Flutter etc. I am committed to continuous learning and innovation in the tech industry.
           </p>
 
-          <a href="./Sachin's CV-Resume.pdf" className='hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100 ' download>
+          <a href="./Sachin Prabuditha-CV.pdf" className='hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100 ' download>
             <MagicButton
               title="Download My CV"
               icon={<FaDownload className='group-hover:translate-x-1 group-hover:-translate-y-1 transition-all animate-bounce'/>}
