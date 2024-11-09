@@ -98,7 +98,7 @@ export const navItems = [
       title: "LandValt",
       des: "LandValt is a comprehensive online land sales platform developed by using HTML, PHP and SQL as part of the 1 st Year 2nd semester Information and Web Technologies (IWT) module.",
       img: "./Screenshot 2023-05-19 004618.png",
-      iconLists: ["./PHP.svg", "./xampp-svgrepo-com.svg", "./html-5-svgrepo-com.svg", "./sql-svgrepo-com.svg", "./css-3-svgrepo-com.svg"],
+      iconLists: ["./PHP.svg", "./javascript-svgrepo-com.svg", "./xampp-svgrepo-com.svg", "./html-5-svgrepo-com.svg", "./sql-svgrepo-com.svg", "./css-3-svgrepo-com.svg", "./Figma.svg"],
       link: "https://github.com/sachinprabuditha/online-land-sales-system-main",
     },
     {
