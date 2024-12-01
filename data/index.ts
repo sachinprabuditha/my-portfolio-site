@@ -88,7 +88,7 @@ export const navItems = [
     {
       id: 3,
       title: "CareQueue",
-      des: "CareQueue is an innovative e-channeling system designed using Java and SQL as a Project of the 2nd Year 1st Semester Object-Oriented Programming (OOP) module.",
+      des: "CareQueue is an innovative e-channeling system designed using Java and SQL as a Project of the 2nd Year 1st Semester Object-Oriented Programming (OOP) module.                     ",
       img: "./CareQueue Logo.png",
       iconLists: ["./Java.svg", "./javascript-svgrepo-com.svg", "./mysql-svgrepo-com.svg", "./Bootstrap.svg", "./css-3-svgrepo-com.svg"],
       link: "https://github.com/sachinprabuditha/E-Channeling-main",
@@ -120,7 +120,7 @@ export const navItems = [
     {
       id: 7,
       title: "X-Clone",
-      des: "X-Clone is an Social Media Application designed from clonning X(Twitter). X-Clone aims to  facilitate the creation, sharing and aggregation of content, ideas, interests.",
+      des: "X-Clone is an Social Media Application designed from clonning X(Twitter). X-Clone aims to  facilitate the creation, sharing and aggregation of content, ideas, interests.             ",
       img: "./-Clone.png",
       iconLists: ["./next.svg", "./re.svg", "./tail.svg", "./javascript-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./firebase-svgrepo-com.svg", "./Git1.svg"],
       link: "https://github.com/sachinprabuditha/x-next-clone.git",
