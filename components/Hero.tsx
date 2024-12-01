@@ -21,7 +21,7 @@ const Hero = () => {
           <a href="#home" className='text-white hover:text-purple transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>Home</a>
           <a href="#home" className='text-white hover:text-purple transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>About Me</a>
           <a href="#education" className='text-white hover:text-purple transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>Education</a>
-          <a href="#projects" className='text-white hover:text-purple transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>My Projects</a>
+          <a href="#projects" className='text-white hover:text-purple transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>Projects</a>
           <a href="#contact" className='text-white hover:text-purple transition duration-300 hover:scale-110 focus:scale-110 active:scale-105 disabled:scale-100'>Contact Me</a>
         </div>
         <div className='ml-2 flex space-x-4'>
