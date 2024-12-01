@@ -40,7 +40,7 @@ const RecentProjects = () => {
                   {item.title}
                 </h1>
                 <p
-                  className=" font-light text-sm line-clamp-4"
+                  className=" font-light text-sm line-clamp-3"
                   style={{
                     color: "#BEC1DD",
                     margin: "1vh 0",

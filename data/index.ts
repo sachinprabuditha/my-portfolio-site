@@ -80,7 +80,7 @@ export const navItems = [
     {
       id: 2,
       title: "ToDo",
-      des: "ToDo is task management Android mobile application developed individually by using Kotlin and Android Studio as part of the 2nd Year 2nd Semester Mobile Application Development module.",
+      des: "ToDo is task management Android mobile application developed individually by using Kotlin and Android Studio as part of the 2nd Year 2nd Semester MAD module.",
       img: "./ToDo (1).png",
       iconLists: ["./xml-document-svgrepo-com.svg", "./kotlin-svgrepo-com.svg", "./sqlite-svgrepo-com.svg", "./Android Studio.svg", "./github-color-svgrepo-com.svg", "./Git1.svg"],
       link: "https://github.com/sachinprabuditha/Todo-Application-Android-Kotlin",
@@ -88,7 +88,7 @@ export const navItems = [
     {
       id: 3,
       title: "CareQueue",
-      des: "CareQueue is an innovative e-channeling system designed using Java and SQL as a Project of the 2nd Year 1st Semester Object-Oriented Programming (OOP) module.                     ",
+      des: "CareQueue is an innovative e-channeling system designed using Java and SQL. This is a Project of the 2nd Year 1st Semester Object-Oriented Programming (OOP) module.",
       img: "./CareQueue Logo.png",
       iconLists: ["./Java.svg", "./javascript-svgrepo-com.svg", "./mysql-svgrepo-com.svg", "./Bootstrap.svg", "./css-3-svgrepo-com.svg"],
       link: "https://github.com/sachinprabuditha/E-Channeling-main",
@@ -96,7 +96,7 @@ export const navItems = [
     {
       id: 4,
       title: "LandValt",
-      des: "LandValt is a comprehensive online land sales platform developed by using HTML, PHP and SQL as part of the 1 st Year 2nd semester Information and Web Technologies (IWT) module.",
+      des: "LandValt is a comprehensive online land sales platform developed by using HTML, PHP, CSS and SQL as part of the 1 st Year 2nd semester IWT module.",
       img: "./Screenshot 2023-05-19 004618.png",
       iconLists: ["./PHP.svg", "./javascript-svgrepo-com.svg", "./xampp-svgrepo-com.svg", "./html-5-svgrepo-com.svg", "./sql-svgrepo-com.svg", "./css-3-svgrepo-com.svg", "./Figma.svg"],
       link: "https://github.com/sachinprabuditha/online-land-sales-system-main",
@@ -104,7 +104,7 @@ export const navItems = [
     {
       id: 5,
       title: "Flying Blaster",
-      des: "Flying Blaster is an Android mobile game developed individually by using Kotlin and Android Studio as part of the 2nd Year 2nd Semester Mobile Application Development module.",
+      des: "Flying Blaster is an Android mobile game developed individually by using Kotlin and Android Studio as part of the 2nd Year 2nd Semester MAD module.",
       img: "./ToDo (2).png",
       iconLists: ["./xml-document-svgrepo-com.svg", "./kotlin-svgrepo-com.svg", "./Android Studio.svg", "./sql-svgrepo-com.svg"],
       link: "https://github.com/sachinprabuditha/Flying-Blaster-Android-Kotlin-Game",
@@ -112,7 +112,7 @@ export const navItems = [
     {
       id: 6,
       title: "MovieApp",
-      des: "MovieApp is an Android mobile Application designed to provide information about movies. MovieApp aims to enhance the movie-watching experience and information, reviews, and ratings.",
+      des: "MovieApp is an Android mobile Application designed to provide information about movies to enhance the experience and information, reviews, and ratings.",
       img: "./ToDo (3).png",
       iconLists: ["./xml-document-svgrepo-com.svg", "./kotlin-svgrepo-com.svg", "./Android Studio.svg"],
       link: "https://github.com/sachinprabuditha/MovieApp-Android-Mobile-Application-",
@@ -120,7 +120,7 @@ export const navItems = [
     {
       id: 7,
       title: "X-Clone",
-      des: "X-Clone is an Social Media Application designed from clonning X(Twitter). X-Clone aims to  facilitate the creation, sharing and aggregation of content, ideas, interests.             ",
+      des: "X-Clone is an Social Media Application designed from clonning X(Twitter). X-Clone aims to  facilitate the creation, sharing and aggregation of content, ideas, interests.",
       img: "./-Clone.png",
       iconLists: ["./next.svg", "./re.svg", "./tail.svg", "./javascript-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./firebase-svgrepo-com.svg", "./Git1.svg"],
       link: "https://github.com/sachinprabuditha/x-next-clone.git",
@@ -128,7 +128,7 @@ export const navItems = [
     {
       id: 8,
       title: "VisionCart",
-      des: "Developed a voice-controlled shopping app for visually impaired users, text-to-speech. My role included user registration, profile management, and admin user management.",
+      des: "Developed a voice-controlled shopping app for visually impaired users, text-to-speech. My role included user registration, profile management, and user management.",
       img: "./VisionCart1.jpg",
       iconLists: ["./Flutter.svg", "./Dart.svg", "./firebase-svgrepo-com.svg", "./Figma.svg", "github-color-svgrepo-com.svg", "./Git1.svg"],
       link: "https://github.com/sachinprabuditha/visioncart.git",
