@@ -1,3 +1,6 @@
+import { skillsData } from "@/lib/data";
+import { Code, Users, Zap } from "lucide-react";
+
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
@@ -218,35 +221,58 @@ export const navItems = [
   ];
   
   export const workExperience = [
-    {
-      id: 1,
-      title: "Frontend Engineer Intern",
-      desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
-      className: "md:col-span-2",
-      thumbnail: "/exp1.svg",
-    },
-    {
-      id: 2,
-      title: "Mobile App Dev - JSM Tech",
-      desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-      className: "md:col-span-2", // change to md:col-span-2
-      thumbnail: "/exp2.svg",
-    },
-    {
-      id: 3,
-      title: "Freelance App Dev Project",
-      desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-      className: "md:col-span-2", // change to md:col-span-2
-      thumbnail: "/exp3.svg",
-    },
-    {
-      id: 4,
-      title: "Lead Frontend Developer",
-      desc: "Developed and maintained user-facing features using modern frontend technologies.",
-      className: "md:col-span-2",
-      thumbnail: "/exp4.svg",
-    },
-  ];
+  {
+    id: 1,
+    title: "Senior Frontend Developer",
+    company: "TechCorp Inc.",
+    location: "San Francisco, CA",
+    period: "2022 - Present",
+    type: "Full-time",
+    description: "Leading development of next-generation web applications using React, TypeScript, and modern frameworks. Mentoring junior developers and architecting scalable solutions.",
+    achievements: [
+      "Increased user engagement by 40% through performance optimizations",
+      "Led a team of 5 developers on critical product features",
+      "Implemented comprehensive testing strategy reducing bugs by 60%"
+    ],
+    skills: ["React", "TypeScript", "Next.js", "GraphQL", "AWS"],
+    color: "from-blue-500 to-cyan-500",
+    icon: Code
+  },
+  {
+    id: 2,
+    title: "Full Stack Developer",
+    company: "StartupXYZ",
+    location: "Remote",
+    period: "2020 - 2022",
+    type: "Contract",
+    description: "Built scalable web applications from ground up, handling both frontend and backend development. Collaborated with cross-functional teams to deliver high-quality products.",
+    achievements: [
+      "Developed 3 major product features serving 10K+ users",
+      "Reduced API response time by 50% through optimization",
+      "Mentored 2 junior developers"
+    ],
+    skills: ["Vue.js", "Node.js", "MongoDB", "Docker", "GCP"],
+    color: "from-purple-500 to-pink-500",
+    icon: Zap
+  },
+  {
+    id: 3,
+    title: "Frontend Developer",
+    company: "Digital Agency",
+    location: "New York, NY",
+    period: "2018 - 2020",
+    type: "Full-time",
+    description: "Created responsive web applications and interactive user interfaces for various clients. Focused on performance optimization and accessibility standards.",
+    achievements: [
+      "Delivered 15+ client projects on time and within budget",
+      "Improved website loading speed by 35% on average",
+      "Implemented accessibility features meeting WCAG 2.1 standards"
+    ],
+    skills: ["JavaScript", "HTML/CSS", "SASS", "jQuery", "Webpack"],
+    color: "from-green-500 to-emerald-500",
+    icon: Users
+  }
+];
   
   export const socialMedia = [
     {

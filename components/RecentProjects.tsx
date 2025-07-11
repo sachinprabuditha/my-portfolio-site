@@ -8,7 +8,7 @@ const RecentProjects = () => {
     <div className="py-40" id='projects'>
       <h1 className="heading">
         These are my{" "}
-        <span className="text-purple">Recent Projects</span>
+        <span className="text-cyan-500">Recent Projects</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-12 mt-10">
         {projects.map((item) => (
