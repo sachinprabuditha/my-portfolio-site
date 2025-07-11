@@ -196,27 +196,6 @@ export const SoftwareEngineerHeader = () => {
         }`}
         style={{ backdropFilter: 'blur(24px)' }}
       >
-        {/* Animated Code Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full code-bg animate-code-matrix opacity-20">
-            {`const developer = {
-  name: 'Sachin Prabuditha',
-  skills: ['JavaScript', 'React', 'Node.js', 'Python'],
-  passion: 'Building amazing software',
-  status: 'Always learning'
-};
-
-function createAwesomeThings() {
-  return code + creativity + coffee;
-}
-
-while (learning) {
-  keepCoding();
-  solveProblem();
-  buildCoolStuff();
-}`}
-          </div>
-        </div>
 
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
