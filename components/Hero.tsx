@@ -91,7 +91,7 @@ const Hero = () => {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-6">
-              Hi! I'm <span className="text-purple-400 font-semibold">Sachin Prabuditha</span>, an innovative Full Stack Developer specializing in creating extraordinary digital experiences. Based in Sri Lanka, I'm currently pursuing Software Engineering at SLIIT.
+              Hi! I&apos;m <span className="text-purple-400 font-semibold">Sachin Prabuditha</span>, an innovative Full Stack Developer specializing in creating extraordinary digital experiences. Based in Sri Lanka, I&apos;m currently pursuing Software Engineering at SLIIT.
             </p>
             <p className="text-gray-400 text-base md:text-lg leading-relaxed">
               With expertise in <span className="text-blue-400 font-medium">JavaScript, React, Next.js, Node.js, Python, Flutter, Linux</span> and more, I transform complex ideas into intuitive, scalable solutions that make a difference.
