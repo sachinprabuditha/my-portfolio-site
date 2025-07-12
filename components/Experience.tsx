@@ -17,7 +17,7 @@ const workExperience = [
       "Helped optimize the Comercial Credit app's performance"
     ],
     skills: ["Flutter", "API Integration", "Dart", "Git"],
-    color: "from-blue-800 to-purple-800",
+    color: "from-cyan-600 to-purple-800",
     icon: Code
   },
 //   {
@@ -227,7 +227,7 @@ const Experience = () => {
                     
                     {/* Pulsing ring */}
                     <motion.div
-                      className={`absolute inset-0 rounded-full border-2 border-blue-400/30`}
+                      className={`absolute inset-0 rounded-full border-2 border-cyan-400/30`}
                       animate={{
                         scale: [1, 1.5, 1],
                         opacity: [0.5, 0.1, 0.5],

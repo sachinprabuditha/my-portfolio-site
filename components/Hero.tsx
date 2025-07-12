@@ -276,12 +276,6 @@ const Hero = () => {
             opacity: typeof window !== 'undefined' ? 
               Math.max(0, 1 - window.scrollY / 300) : 1 // Fade out as user scrolls
             }}>
-            <div className="flex flex-col items-center space-y-2 animate-bounce">
-              <div className="w-6 h-10 border-2 border-purple-400/50 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-purple-400 rounded-full mt-2 animate-pulse"></div>
-              </div>
-              <span className="text-xs text-gray-400">Scroll to explore</span>
-            </div>
             </div>
         </div>
       </div>
