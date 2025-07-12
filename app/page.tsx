@@ -29,7 +29,7 @@ export default function Home() {
 
 
   return (
-    <main className="relative bg-gradient-to-br from-slate-900 via-purple-900/10 to-slate-900 flex justify-center items-center flex-col overflow-hidden">
+    <main className="relative bg-gradient-to-br from-slate-900 via-purple-900/10 to-slate-900 flex flex-col overflow-x-hidden min-h-screen w-full">
       <div className="w-full">
         <Hero />
         
@@ -47,28 +47,28 @@ export default function Home() {
         <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
         
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-          <Education></Education>
+          <Education/>
         </div>
 
         <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
         
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-          <Skills></Skills>
+          <Skills/>
         </div>
 
         <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
         
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-          <RecentProjects></RecentProjects>
+          <RecentProjects/>
         </div>
 
         <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
         
         <div className="px-4 sm:px-6">
-          <Contact></Contact>
+          <Contact/>
         </div>
 
-        <Footer></Footer>
+        <Footer/>
 
       </div>
 

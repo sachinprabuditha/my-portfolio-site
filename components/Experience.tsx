@@ -135,7 +135,7 @@ const Experience = () => {
   return (
     <section className="min-h-screen ">
       {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}

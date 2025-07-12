@@ -54,17 +54,17 @@ export const SoftwareEngineerHeader = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home', icon: "FaTerminal" },
-    { name: 'About', href: '#about', icon: "FaCode" },
-    { name: 'Experience', href: '#experience', icon: "FaRocket" },
-    { name: 'Skills', href: '#skills', icon: "FaCode" },
-    { name: 'Education', href: '#education', icon: "FaTerminal" },
-    { name: 'Projects', href: '#projects', icon: "FaRocket" }
+    { name: 'Home', href: '#home', icon: FaTerminal },
+    { name: 'About', href: '#about', icon: FaCode },
+    { name: 'Experience', href: '#experience', icon: FaRocket },
+    { name: 'Skills', href: '#skills', icon: FaCode },
+    { name: 'Education', href: '#education', icon: FaTerminal },
+    { name: 'Projects', href: '#projects', icon: FaRocket }
   ];
 
   const socialLinks = [
     { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sachinprabuditha/', color: 'hover:text-blue-400', label: 'LinkedIn' },
-    { icon: FaGithub, href: 'https://github.com/sachinprabuditha', color: 'hover:text-purple', label: 'GitHub' },
+    { icon: FaGithub, href: 'https://github.com/sachinprabuditha', color: 'hover:text-purple-400', label: 'GitHub' },
     { icon: FaInstagram, href: 'https://www.instagram.com/sac_hin_pr', color: 'hover:text-pink-400', label: 'Instagram' },
     { icon: FaMedium, href: 'https://medium.com/@ksachinprabuditha', color: 'hover:text-green-400', label: 'Medium' }
   ];
@@ -139,8 +139,8 @@ export const SoftwareEngineerHeader = () => {
         
         .glass-effect {
           backdrop-filter: blur(20px);
-          background: rgba(15, 23, 42, 0.9);
-          border: 1px solid rgba(99, 102, 241, 0.2);
+          background: rgba(15, 23, 42, 0.3);
+          border: 1px solid rgba(99, 102, 241, 0.1);
         }
         
         .hover-lift {
@@ -191,8 +191,8 @@ export const SoftwareEngineerHeader = () => {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
           isScrolled 
-            ? 'glass-effect shadow-2xl shadow-indigo-500/20 border-b border-cyan-500/30' 
-            : 'glass-effect bg-gradient-to-r from-slate-900/90 via-slate-900/90 to-slate-900/90'
+            ? 'glass-effect shadow-2xl shadow-indigo-500/10 border-b border-cyan-500/20' 
+            : 'glass-effect bg-gradient-to-r from-slate-900/30 via-slate-900/20 to-slate-900/30'
         }`}
         style={{ backdropFilter: 'blur(24px)' }}
       >
@@ -207,28 +207,29 @@ export const SoftwareEngineerHeader = () => {
         
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/5 via-cyan-600/5 to-purple-600/5 opacity-0 hover:opacity-100 transition-opacity duration-700 animate-gradient-shift" />
         
-        <div className="relative container mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-18 lg:h-20">
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20 sm:h-18 lg:h-20">
             
-            {/* Enhanced Logo with Code Icon */}
-            <div className="flex items-center space-x-3 group animate-slide-in">
+            {/* Enhanced Logo with Code Icon - Fixed for mobile */}
+            <div className="flex items-center space-x-2 sm:space-x-3 group animate-slide-in">
               <div className="relative animate-float">
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-cyan-500 to-purple-500 rounded-full blur opacity-75 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-glow" />
-                <div className="relative w-10 h-10 lg:w-12 lg:h-12 rounded-full ring-2 ring-indigo-500/50 group-hover:ring-indigo-400 transition-all duration-300 overflow-hidden bg-gradient-to-br from-indigo-600 to-cyan-600 flex items-center justify-center">
+                <div className="relative w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full ring-2 ring-indigo-500/50 group-hover:ring-indigo-400 transition-all duration-300 overflow-hidden bg-gradient-to-br from-indigo-600 to-cyan-600 flex items-center justify-center">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
-                   <img 
-                  src="./Untitled design (1).png" 
-                  alt="Sachin Prabuditha" 
-                  className="relative w-10 h-10 lg:w-12 lg:h-12 rounded-full ring-2 ring-purple-500/50 group-hover:ring-purple-400 transition-all duration-300"
-                />
+                  <img 
+                    src="./Untitled design (1).png" 
+                    alt="Sachin Prabuditha" 
+                    className="relative w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full ring-2 ring-purple-500/50 group-hover:ring-purple-400 transition-all duration-300"
+                  />
                 </div>
               </div>
-              <div className="hidden sm:block">
-                <h1 className="text-lg lg:text-xl font-bold bg-gradient-to-r from-white via-indigo-200 to-cyan-200 bg-clip-text text-transparent animate-gradient-shift">
+              {/* Show name section on all screen sizes with responsive text */}
+              <div className="block">
+                <h1 className="text-sm sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-white via-indigo-200 to-cyan-200 bg-clip-text text-transparent animate-gradient-shift">
                   Sachin Prabuditha
                 </h1>
-                <p className="text-xs text-gray-400 font-medium">
-                  <span className="inline-block min-w-[140px]">
+                <p className="text-xs sm:text-xs text-gray-400 font-medium">
+                  <span className="inline-block min-w-[100px] sm:min-w-[140px]">
                     {typewriterText}
                     <span className="typewriter-cursor">|</span>
                   </span>
@@ -254,7 +255,7 @@ export const SoftwareEngineerHeader = () => {
             </nav>
 
             {/* Enhanced Actions */}
-            <div className="flex items-center space-x-3 animate-slide-in" style={{ animationDelay: '0.4s' }}>
+            <div className="flex items-center space-x-2 sm:space-x-3 animate-slide-in" style={{ animationDelay: '0.4s' }}>
               <div className="hidden md:flex items-center space-x-2">
                 {socialLinks.map((social, index) => (
                   <a
@@ -276,7 +277,7 @@ export const SoftwareEngineerHeader = () => {
                 className="hidden md:flex items-center space-x-2 px-4 py-2 border border-indigo-500/50 text-cyan-400 hover:bg-indigo-500/10 text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105"
               >
                 <FaRocket className="w-3 h-3" />
-                <span>Let&apos;s Connect</span>
+                <span>Let's Connect</span>
               </a>
 
               <button
@@ -305,10 +306,10 @@ export const SoftwareEngineerHeader = () => {
           onClick={() => setIsMobileMenuOpen(false)}
         />
         
-        <div className={`absolute top-20 left-4 right-4 glass-effect rounded-2xl border border-indigo-500/30 shadow-2xl overflow-hidden transition-all duration-700 ${
+        <div className={`absolute top-20 left-4 right-4 glass-effect rounded-2xl border border-indigo-500/20 shadow-2xl overflow-hidden transition-all duration-700 ${
           isMobileMenuOpen ? 'translate-y-0 opacity-100 scale-100' : '-translate-y-8 opacity-0 scale-95'
         }`}>
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/10 via-cyan-600/10 to-purple-600/10 animate-gradient-shift" />
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/5 via-cyan-600/5 to-purple-600/5 animate-gradient-shift" />
           
           <nav className="relative p-6 space-y-2">
             {navItems.map((item, index) => (
@@ -318,7 +319,7 @@ export const SoftwareEngineerHeader = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-indigo-500/20 rounded-lg transition-all duration-300 font-medium hover-lift"
               >
-                <span className="text-sm">{<item.icon />}</span>
+                <item.icon className="text-sm" />
                 <span>{item.name}</span>
               </a>
             ))}
@@ -356,7 +357,7 @@ export const SoftwareEngineerHeader = () => {
                   className="flex items-center justify-center space-x-2 w-full px-4 py-3 border border-indigo-500/50 text-indigo-400 hover:bg-indigo-500/10 font-medium rounded-lg transition-all duration-300"
                 >
                   <FaRocket className="w-4 h-4" />
-                  <span>Let&apos;s Connect</span>
+                  <span>Let's Connect</span>
                 </a>
               </div>
             </div>

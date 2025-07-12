@@ -1,3 +1,4 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -19,21 +20,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-
-    <ThemeContextProvider>
-      <ActiveSectionContextProvider>
     <html lang="en">
-      <body className={inter.className}><ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            <Toaster position="top-right" />
-          </ThemeProvider></body>
+      <body className={inter.className}>
+        <ThemeContextProvider>
+          <ActiveSectionContextProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+              <Toaster position="top-right" />
+            </ThemeProvider>
+          </ActiveSectionContextProvider>
+        </ThemeContextProvider>
+      </body>
     </html>
-    </ActiveSectionContextProvider>
-    </ThemeContextProvider>
   );
 }
