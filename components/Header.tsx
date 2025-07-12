@@ -277,7 +277,7 @@ export const SoftwareEngineerHeader = () => {
                 className="hidden md:flex items-center space-x-2 px-4 py-2 border border-indigo-500/50 text-cyan-400 hover:bg-indigo-500/10 text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105"
               >
                 <FaRocket className="w-3 h-3" />
-                <span>Let's Connect</span>
+                <span>Let&apos;s Connect</span>
               </a>
 
               <button
@@ -357,7 +357,7 @@ export const SoftwareEngineerHeader = () => {
                   className="flex items-center justify-center space-x-2 w-full px-4 py-3 border border-indigo-500/50 text-indigo-400 hover:bg-indigo-500/10 font-medium rounded-lg transition-all duration-300"
                 >
                   <FaRocket className="w-4 h-4" />
-                  <span>Let's Connect</span>
+                  <span>Let&apos;s Connect</span>
                 </a>
               </div>
             </div>

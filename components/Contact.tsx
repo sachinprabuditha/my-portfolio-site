@@ -32,10 +32,10 @@ export default function Contact() {
         once: true,
       }}
     >
-      <SectionHeading>Let's Build <span className="text-cyan-500">Something Amazing Together 🚀</span></SectionHeading>
+      <SectionHeading>Let&apos;s Build <span className="text-cyan-500">Something Amazing Together 🚀</span></SectionHeading>
 
       <p className="text-white/90 -mt-1 text-lg leading-relaxed">
-        Ready to discuss your next project? I'm always excited to collaborate on innovative solutions and bring ideas to life through code.
+        Ready to discuss your next project? I&apos;m always excited to collaborate on innovative solutions and bring ideas to life through code.
       </p>
 
       <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
