@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import Skills from "@/components/Skills";
 import Education from "@/components/ui/Education";
 import Experience from "@/components/Experience";
+import Certificates from "@/components/Certificates";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -45,6 +46,12 @@ export default function Home() {
         </div>
 
         <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
+
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
+          <Certificates/>
+        </div>
+
+        <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
         
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
           <Education/>
@@ -57,7 +64,7 @@ export default function Home() {
         </div>
 
         <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
-        
+
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
           <RecentProjects/>
         </div>

@@ -1,8 +1,9 @@
 "use client";
 
+import { HomeIcon } from "lucide-react";
 import { useState, useEffect } from "react";
-import { FaArrowUp, FaDownload, FaLinkedin, FaGithub, FaCode, FaBars, FaTimes, FaTerminal, FaRocket } from "react-icons/fa";
-import { FaInstagram, FaMedium } from "react-icons/fa6";
+import { FaArrowUp, FaDownload, FaLinkedin, FaGithub, FaCode, FaBars, FaTimes, FaTerminal, FaHome, FaBriefcase, FaFolderOpen, FaGraduationCap, FaUser, FaRocket } from "react-icons/fa";
+import { FaAccusoft, FaInstagram, FaMedium, FaCertificate } from "react-icons/fa6";
 import { SiStackoverflow } from "react-icons/si";
 
 // Enhanced Software Engineer Header Component
@@ -54,12 +55,13 @@ export const SoftwareEngineerHeader = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home', icon: FaTerminal },
-    { name: 'About', href: '#about', icon: FaCode },
-    { name: 'Experience', href: '#experience', icon: FaRocket },
+    { name: 'Home', href: '#home', icon: FaHome },
+    { name: 'About', href: '#about', icon: FaUser },
+    { name: 'Experience', href: '#experience', icon: FaBriefcase },
+    { name: 'Certificates', href: '#certificates', icon: FaCertificate },
     { name: 'Skills', href: '#skills', icon: FaCode },
-    { name: 'Education', href: '#education', icon: FaTerminal },
-    { name: 'Projects', href: '#projects', icon: FaRocket }
+    { name: 'Education', href: '#education', icon: FaGraduationCap },
+    { name: 'Projects', href: '#projects', icon: FaFolderOpen }
   ];
 
   const socialLinks = [
@@ -212,7 +214,7 @@ export const SoftwareEngineerHeader = () => {
             
             {/* Enhanced Logo with Code Icon - Fixed for mobile */}
             <div className="flex items-center space-x-2 sm:space-x-3 group animate-slide-in">
-              <div className="relative animate-float">
+              {/* <div className="relative animate-float">
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-cyan-500 to-purple-500 rounded-full blur opacity-75 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-glow" />
                 <div className="relative w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full ring-2 ring-indigo-500/50 group-hover:ring-indigo-400 transition-all duration-300 overflow-hidden bg-gradient-to-br from-indigo-600 to-cyan-600 flex items-center justify-center">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
@@ -222,7 +224,7 @@ export const SoftwareEngineerHeader = () => {
                     className="relative w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full ring-2 ring-purple-500/50 group-hover:ring-purple-400 transition-all duration-300"
                   />
                 </div>
-              </div>
+              </div> */}
               {/* Show name section on all screen sizes with responsive text */}
               <div className="block">
                 <h1 className="text-sm sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-white via-indigo-200 to-cyan-200 bg-clip-text text-transparent animate-gradient-shift">

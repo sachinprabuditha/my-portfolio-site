@@ -4,6 +4,7 @@ import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import MagicButton from './ui/MagicButton'
 import { FaDownload } from 'react-icons/fa'
 import ModernHeader from './Header'
+import Image from 'next/image'
 import '../app/globals.css'
 
 const Hero = () => {
@@ -175,108 +176,153 @@ const Hero = () => {
 
       {/* Enhanced Hero Content */}
       <div className='relative z-10 flex items-center justify-center min-h-screen pt-20'>
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          
-          {/* Animated Badge */}
-          <div className={`inline-flex items-center px-4 py-2 bg-white/5 backdrop-blur-lg rounded-full border border-purple-500/20 mb-6 mt-4 transition-all duration-1000 ${
-            isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-            <span className="text-sm text-gray-300">Available for opportunities</span>
-          </div>
+        <div className="max-w-6xl mx-auto px-6 w-full">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-          {/* SUPER ENHANCED Main Heading */}
-          <div className={`mb-8 transition-all duration-1000 delay-300 ${
-            isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <div className="relative">
-              {/* Background Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-cyan-500/20 to-purple-500/20 rounded-3xl blur-3xl animate-pulse" />
-              
-              {/* Floating Sparkles */}
-              <div className="absolute -top-4 -left-4 w-3 h-3 bg-cyan-400 rounded-full sparkle" style={{ animationDelay: '0s' }} />
-              <div className="absolute -top-2 right-10 w-2 h-2 bg-purple-400 rounded-full sparkle" style={{ animationDelay: '1s' }} />
-              <div className="absolute -bottom-4 left-1/3 w-2 h-2 bg-blue-400 rounded-full sparkle" style={{ animationDelay: '2s' }} />
-              <div className="absolute -bottom-2 -right-6 w-3 h-3 bg-cyan-400 rounded-full sparkle" style={{ animationDelay: '0.5s' }} />
-              
-              <h1 className="relative text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 leading-tight float-animation">
-                <div className="pb-4 relative">
-                  {/* Shimmer Overlay */}
-                  <div className="absolute inset-0 shimmer-effect opacity-30 rounded-2xl" />
-                  
-                  {words.split(' ').map((word, index) => (
-                    <span
-                      key={index}
-                      className="inline-block ml-3 mr-3 md:mr-4 md:ml-4 mb-2 relative word-hover cursor-pointer group"
-                      style={{
-                        animation: `fadeInUp 1s ease-out ${index * 0.15}s both`,
-                        transformOrigin: 'bottom center'
-                      }}
-                    >
-                      {/* Individual Word Glow */}
-                      <span className="absolute inset-0 bg-gradient-to-r from-blue-500/30 via-cyan-500/30 to-blue-500/30 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      
-                      {/* Pulse Ring Effect */}
-                      <span className="absolute inset-0 border-2 border-blue-400/50 rounded-lg opacity-0 group-hover:opacity-100 pulse-ring" />
-                      
-                      {/* Main Text with Multiple Gradients */}
-                      <span className="relative gradient-text glow-text font-extrabold tracking-tight">
-                        {word}
-                      </span>
-                      
-                      {/* Micro Sparkles on Hover */}
-                      <span className="absolute -top-1 -right-1 w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 sparkle" />
-                    </span>
-                  ))} 
+            {/* Text Content */}
+            <div className="flex-1 text-center lg:text-left order-2 lg:order-1">
+
+              {/* Animated Badge */}
+              <div className={`inline-flex items-center px-4 py-2 bg-white/5 backdrop-blur-lg rounded-full border border-purple-500/20 mb-6 mt-4 transition-all duration-1000 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}>
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                <span className="text-sm text-gray-300">Available for opportunities</span>
+              </div>
+
+              {/* Main Heading */}
+              <div className={`mb-8 transition-all duration-1000 delay-300 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}>
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-cyan-500/20 to-purple-500/20 rounded-3xl blur-3xl animate-pulse" />
+                  <div className="absolute -top-4 -left-4 w-3 h-3 bg-cyan-400 rounded-full sparkle" style={{ animationDelay: '0s' }} />
+                  <div className="absolute -top-2 right-10 w-2 h-2 bg-purple-400 rounded-full sparkle" style={{ animationDelay: '1s' }} />
+                  <div className="absolute -bottom-4 left-1/3 w-2 h-2 bg-blue-400 rounded-full sparkle" style={{ animationDelay: '2s' }} />
+                  <div className="absolute -bottom-2 -right-6 w-3 h-3 bg-cyan-400 rounded-full sparkle" style={{ animationDelay: '0.5s' }} />
+
+                  <h1 className="relative text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 leading-tight float-animation">
+                    <div className="pb-4 relative">
+                      <div className="absolute inset-0 shimmer-effect opacity-30 rounded-2xl" />
+                      {words.split(' ').map((word, index) => (
+                        <span
+                          key={index}
+                          className="inline-block ml-3 mr-3 md:mr-4 md:ml-4 mb-2 relative word-hover cursor-pointer group"
+                          style={{
+                            animation: `fadeInUp 1s ease-out ${index * 0.15}s both`,
+                            transformOrigin: 'bottom center'
+                          }}
+                        >
+                          <span className="absolute inset-0 bg-gradient-to-r from-blue-500/30 via-cyan-500/30 to-blue-500/30 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <span className="absolute inset-0 border-2 border-blue-400/50 rounded-lg opacity-0 group-hover:opacity-100 pulse-ring" />
+                          <span className="relative gradient-text glow-text font-extrabold tracking-tight">{word}</span>
+                          <span className="absolute -top-1 -right-1 w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 sparkle" />
+                        </span>
+                      ))}
+                    </div>
+                  </h1>
+
+                  <div className="w-32 h-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 mx-auto lg:mx-0 rounded-full"
+                    style={{ animation: 'shimmer 2s infinite' }} />
                 </div>
-              </h1>
-              
-              {/* Animated Underline */}
-              <div className="w-32 h-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 mx-auto rounded-full animate-pulse" 
-                   style={{ animation: 'shimmer 2s infinite' }} />
+              </div>
+
+              {/* Description */}
+              <div className={`mb-12 max-w-2xl mx-auto lg:mx-0 transition-all duration-1000 delay-500 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}>
+                <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-6">
+                  Hi! I&apos;m <span className="text-purple-400 font-semibold">Sachin Prabuditha</span>, an innovative Full Stack Developer specializing in creating extraordinary digital experiences. Based in Sri Lanka, I&apos;m currently pursuing Software Engineering at SLIIT.
+                </p>
+                <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+                  With expertise in <span className="text-blue-400 font-medium">JavaScript, React, Next.js, Node.js, Python, Flutter, Linux</span> and more, I transform complex ideas into intuitive, scalable solutions that make a difference.
+                </p>
+              </div>
+
+              {/* CTA */}
+              <div className={`flex flex-col sm:flex-row gap-5 items-center justify-center lg:justify-start mb-16 transition-all duration-1000 delay-700 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}>
+                <a
+                  href="./Sachin_Prabuditha-CV.pdf"
+                  download
+                  className="group relative px-8 py-4 bg-white/5 backdrop-blur-lg border border-white/10 hover:border-cyan-400/50 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/25"
+                >
+                  <span className="relative z-10 flex items-center space-x-2">
+                    <FaDownload className="w-4 h-4 text-cyan-300 group-hover:text-white group-hover:animate-bounce" />
+                    <span>Download Resume</span>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-2xl blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10" />
+                </a>
+              </div>
             </div>
-          </div>
 
-          {/* Enhanced Description */}
-          <div className={`mb-12 max-w-4xl mx-auto transition-all duration-1000 delay-500 ${
-            isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-6">
-              Hi! I&apos;m <span className="text-purple-400 font-semibold">Sachin Prabuditha</span>, an innovative Full Stack Developer specializing in creating extraordinary digital experiences. Based in Sri Lanka, I&apos;m currently pursuing Software Engineering at SLIIT.
-            </p>
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed">
-              With expertise in <span className="text-blue-400 font-medium">JavaScript, React, Next.js, Node.js, Python, Flutter, Linux</span> and more, I transform complex ideas into intuitive, scalable solutions that make a difference.
-            </p>
-          </div>
-
-            {/* Enhanced CTA Section with Color Highlights */}
-            <div className={`flex flex-col sm:flex-row gap-5 items-center justify-center mb-16 transition-all duration-1000 delay-700 ${
-            isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            {/* Profile Image */}
+            <div className={`flex-shrink-0 order-1 lg:order-2 transition-all duration-1000 delay-200 ${
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
-            <a 
-              href="./Sachin_Prabuditha-CV.pdf" 
-              download
-              className="group relative px-8 py-4 bg-white/5 backdrop-blur-lg border border-white/10 hover:border-cyan-400/50 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/25"
-            >
-              <span className="relative z-10 flex items-center space-x-2">
-              <FaDownload className="w-4 h-4 text-cyan-300 group-hover:text-white group-hover:animate-bounce" />
-              <span>Download Resume</span>
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              {/* Added highlight effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-2xl blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"></div>
-            </a>
+              <div className="relative mx-16 lg:mx-0">
+                {/* Ambient glow */}
+                <div className="absolute -inset-6 bg-gradient-to-br from-cyan-500/25 via-purple-600/25 to-pink-500/25 rounded-3xl blur-3xl animate-pulse" />
+
+                {/* Gradient border card */}
+                <div className="relative p-[2px] rounded-3xl bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500">
+                  <div className="relative w-56 md:w-64 lg:w-72 rounded-[calc(1.5rem-2px)] overflow-hidden bg-gray-900">
+                    <Image
+                      src="/prabuditha.png"
+                      alt="Sachin Prabuditha"
+                      width={288}
+                      height={380}
+                      className="w-full object-cover object-top"
+                      priority
+                    />
+                    {/* Name overlay */}
+                    <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent px-4 pb-4 pt-12">
+                      <p className="text-white font-bold text-sm text-center">Sachin Prabuditha</p>
+                      <p className="text-cyan-400 text-xs text-center font-medium tracking-widest uppercase mt-0.5">Software Engineer</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating skill chips */}
+                <div
+                  className="absolute -right-14 top-6 bg-gray-900/90 border border-cyan-500/40 rounded-xl px-3 py-1.5 backdrop-blur-sm shadow-lg shadow-cyan-500/10"
+                  style={{ animation: 'float 3s ease-in-out infinite' }}
+                >
+                  <span className="text-xs text-cyan-400 font-semibold">Flutter</span>
+                </div>
+                <div
+                  className="absolute -left-14 top-1/3 bg-gray-900/90 border border-purple-500/40 rounded-xl px-3 py-1.5 backdrop-blur-sm shadow-lg shadow-purple-500/10"
+                  style={{ animation: 'float 3.5s ease-in-out infinite', animationDelay: '0.5s' }}
+                >
+                  <span className="text-xs text-purple-400 font-semibold">React</span>
+                </div>
+                <div
+                  className="absolute -right-12 bottom-24 bg-gray-900/90 border border-pink-500/40 rounded-xl px-3 py-1.5 backdrop-blur-sm shadow-lg shadow-pink-500/10"
+                  style={{ animation: 'float 2.8s ease-in-out infinite', animationDelay: '1s' }}
+                >
+                  <span className="text-xs text-pink-400 font-semibold">Next.js</span>
+                </div>
+                <div
+                  className="absolute -left-12 bottom-1/3 bg-gray-900/90 border border-blue-500/40 rounded-xl px-3 py-1.5 backdrop-blur-sm shadow-lg shadow-blue-500/10"
+                  style={{ animation: 'float 4s ease-in-out infinite', animationDelay: '1.5s' }}
+                >
+                  <span className="text-xs text-blue-400 font-semibold">Node.js</span>
+                </div>
+              </div>
             </div>
 
-            {/* Enhanced Scroll Indicator */}
-            <div className={`absolute bottom-6 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 ${
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className={`absolute bottom-6 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ 
-            opacity: typeof window !== 'undefined' ? 
-              Math.max(0, 1 - window.scrollY / 300) : 1 // Fade out as user scrolls
-            }}>
-            </div>
+          }`}
+          style={{
+            opacity: typeof window !== 'undefined' ? Math.max(0, 1 - window.scrollY / 300) : 1
+          }}>
+          </div>
         </div>
       </div>
     </div>

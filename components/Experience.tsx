@@ -6,11 +6,27 @@ import { ChevronDown, Calendar, MapPin, ExternalLink, Star, Zap, Code, Users } f
 const workExperience = [
   {
     id: 1,
-    title: "Software Engineer Intern - Frontend",
+    title: "Junior Software Engineer",
+    company: "PayMedia Pvt Ltd",
+    location: "210, Havelock Road, Colombo 05, Sri Lanka",
+    period: "2025 September - Present",
+    type: "Full-time",
+    description: "Continuing at PayMedia as a Junior Software Engineer, contributing to the development of financial technology solutions for banks and institutions. Working on building and maintaining high-quality mobile and web applications to support the company&apos;s mission of transforming digital payments in Sri Lanka and globally.",
+    achievements: [
+      "Transitioned from intern to full-time Junior Software Engineer role",
+      "Continued development on financial applications for banking clients"
+    ],
+    skills: ["Flutter", "Dart", "API Integration", "Git", "Agile"],
+    color: "from-cyan-600 to-purple",
+    icon: Zap
+  },
+  {
+    id: 2,
+    title: "Software Engineer Intern - Mobile",
     company: "PayMedia Pvt Ltd",
     location: "210, Havelock Road,Colombo 05, Sri Lanka",
-    period: "2025 March - Present",
-    type: "Full-time",
+    period: "2025 March - 2025 September",
+    type: "Internship",
     description: "PayMedia is a rapidly evolving Financial Technology (Fin-Tech) company in Sri Lanka, started with the aim of providing the best caliber of total software solutions for banks and other institutes. While keeping the focus on Fin-Tech, the company wants people to trust and enjoy the convenience of digital technology and disrupt the payment processes in the country and around the world.",
     achievements: [
       "Developed and deployed a mobile application for a major banking client (Fintrex Finance Mobile App) using Flutter",
@@ -57,7 +73,6 @@ const workExperience = [
 ];
 
 const Experience = () => {
-  const [activeCard, setActiveCard] = useState<number | null>(null);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const containerVariants = {
