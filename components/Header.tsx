@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { FaArrowUp, FaDownload, FaLinkedin, FaGithub, FaCode, FaBars, FaTimes, FaTerminal, FaHome, FaBriefcase, FaFolderOpen, FaGraduationCap, FaUser, FaRocket } from "react-icons/fa";
 import { FaAccusoft, FaInstagram, FaMedium, FaCertificate } from "react-icons/fa6";
 import { SiStackoverflow } from "react-icons/si";
+import ThemeToggle from "./ThemeToggle";
 
 // Enhanced Software Engineer Header Component
 export const SoftwareEngineerHeader = () => {
@@ -65,10 +66,10 @@ export const SoftwareEngineerHeader = () => {
   ];
 
   const socialLinks = [
-    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sachinprabuditha/', color: 'hover:text-blue-400', label: 'LinkedIn' },
-    { icon: FaGithub, href: 'https://github.com/sachinprabuditha', color: 'hover:text-purple-400', label: 'GitHub' },
-    { icon: FaInstagram, href: 'https://www.instagram.com/sac_hin_pr', color: 'hover:text-pink-400', label: 'Instagram' },
-    { icon: FaMedium, href: 'https://medium.com/@ksachinprabuditha', color: 'hover:text-green-400', label: 'Medium' }
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sachinprabuditha/', color: 'hover:text-blue-600 dark:hover:text-blue-400', label: 'LinkedIn' },
+    { icon: FaGithub, href: 'https://github.com/sachinprabuditha', color: 'hover:text-purple-600 dark:hover:text-purple-400', label: 'GitHub' },
+    { icon: FaInstagram, href: 'https://www.instagram.com/sac_hin_pr', color: 'hover:text-pink-600 dark:hover:text-pink-400', label: 'Instagram' },
+    { icon: FaMedium, href: 'https://medium.com/@ksachinprabuditha', color: 'hover:text-green-600 dark:hover:text-green-400', label: 'Medium' }
   ];
 
   return (
@@ -141,6 +142,11 @@ export const SoftwareEngineerHeader = () => {
         
         .glass-effect {
           backdrop-filter: blur(20px);
+          background: rgba(248, 250, 252, 0.7);
+          border: 1px solid rgba(99, 102, 241, 0.15);
+        }
+
+        :global(html.dark) .glass-effect {
           background: rgba(15, 23, 42, 0.3);
           border: 1px solid rgba(99, 102, 241, 0.1);
         }
@@ -194,7 +200,7 @@ export const SoftwareEngineerHeader = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
           isScrolled 
             ? 'glass-effect shadow-2xl shadow-indigo-500/10 border-b border-cyan-500/20' 
-            : 'glass-effect bg-gradient-to-r from-slate-900/30 via-slate-900/20 to-slate-900/30'
+            : 'glass-effect bg-gradient-to-r from-slate-100/40 via-slate-50/30 to-slate-100/40 dark:from-slate-900/30 dark:via-slate-900/20 dark:to-slate-900/30'
         }`}
         style={{ backdropFilter: 'blur(24px)' }}
       >
@@ -227,10 +233,10 @@ export const SoftwareEngineerHeader = () => {
               </div> */}
               {/* Show name section on all screen sizes with responsive text */}
               <div className="block">
-                <h1 className="text-sm sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-white via-indigo-200 to-cyan-200 bg-clip-text text-transparent animate-gradient-shift">
+                <h1 className="text-sm sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-slate-900 via-indigo-700 to-cyan-700 dark:from-white dark:via-indigo-200 dark:to-cyan-200 bg-clip-text text-transparent animate-gradient-shift">
                   Sachin Prabuditha
                 </h1>
-                <p className="text-xs sm:text-xs text-gray-400 font-medium">
+                <p className="text-xs sm:text-xs text-slate-600 dark:text-gray-400 font-medium">
                   <span className="inline-block min-w-[100px] sm:min-w-[140px]">
                     {typewriterText}
                     <span className="typewriter-cursor">|</span>
@@ -245,13 +251,13 @@ export const SoftwareEngineerHeader = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="relative group px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 rounded-lg hover-lift"
+                  className="relative group px-3 py-2 text-sm font-medium text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white transition-all duration-300 rounded-lg hover-lift"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <span className="relative z-10 flex items-center space-x-2">
                     <span>{item.name}</span>
                   </span>
-                  <div className="absolute inset-0 hover:bg-white/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center group-hover:border group-hover:border-indigo-500/50" />
+                  <div className="absolute inset-0 hover:bg-slate-900/5 dark:hover:bg-white/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center group-hover:border group-hover:border-indigo-500/50" />
                 </a>
               ))}
             </nav>
@@ -265,7 +271,7 @@ export const SoftwareEngineerHeader = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-2 text-gray-400 ${social.color} transition-all duration-300 hover:scale-110 hover:bg-white/10 rounded-lg hover-lift`}
+                    className={`p-2 text-slate-600 dark:text-gray-400 ${social.color} transition-all duration-300 hover:scale-110 hover:bg-slate-900/10 dark:hover:bg-white/10 rounded-lg hover-lift`}
                     title={social.label}
                   >
                     <social.icon className="w-5 h-5" />
@@ -273,10 +279,13 @@ export const SoftwareEngineerHeader = () => {
                 ))}
               </div>
 
+              {/* Theme toggle */}
+              <ThemeToggle />
+
               {/* Quick Action Button */}
               <a
                 href="#contact"
-                className="hidden md:flex items-center space-x-2 px-4 py-2 border border-indigo-500/50 text-cyan-400 hover:bg-indigo-500/10 text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105"
+                className="hidden md:flex items-center space-x-2 px-4 py-2 border border-indigo-500/50 text-cyan-700 dark:text-cyan-400 hover:bg-indigo-500/10 text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105"
               >
                 <FaRocket className="w-3 h-3" />
                 <span>Let&apos;s Connect</span>
@@ -284,7 +293,7 @@ export const SoftwareEngineerHeader = () => {
 
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:bg-white/10 rounded-lg"
+                className="lg:hidden p-2 text-slate-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white transition-all duration-300 hover:scale-110 hover:bg-slate-900/10 dark:hover:bg-white/10 rounded-lg"
               >
                 {isMobileMenuOpen ? (
                   <FaTimes className="w-5 h-5" />
@@ -319,14 +328,14 @@ export const SoftwareEngineerHeader = () => {
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-indigo-500/20 rounded-lg transition-all duration-300 font-medium hover-lift"
+                className="flex items-center space-x-3 px-4 py-3 text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white hover:bg-indigo-500/20 rounded-lg transition-all duration-300 font-medium hover-lift"
               >
                 <item.icon className="text-sm" />
                 <span>{item.name}</span>
               </a>
             ))}
             
-            <div className="pt-4 border-t border-gray-700/50 space-y-3">
+            <div className="pt-4 border-t border-slate-300 dark:border-gray-700/50 space-y-3">
               <div className="flex justify-center space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -334,7 +343,7 @@ export const SoftwareEngineerHeader = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 text-gray-400 ${social.color} transition-all duration-300 hover:scale-110 hover:bg-white/10 rounded-lg hover-lift`}
+                    className={`p-3 text-slate-600 dark:text-gray-400 ${social.color} transition-all duration-300 hover:scale-110 hover:bg-slate-900/10 dark:hover:bg-white/10 rounded-lg hover-lift`}
                     title={social.label}
                   >
                     <social.icon className="w-5 h-5" />
@@ -347,7 +356,7 @@ export const SoftwareEngineerHeader = () => {
                   href="./Sachin_Prabuditha-CV.pdf"
                   download
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-center space-x-2 w-full px-4 py-3 bg-gradient-to-r from-indigo-600 to-cyan-600 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105"
+                  className="flex items-center justify-center space-x-2 w-full px-4 py-3 bg-gradient-to-r from-indigo-600 to-cyan-600 text-slate-900 dark:text-white font-medium rounded-lg transition-all duration-300 hover:scale-105"
                 >
                   <FaDownload className="w-4 h-4" />
                   <span>Download Resume</span>

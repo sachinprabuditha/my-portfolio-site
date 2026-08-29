@@ -11,7 +11,7 @@ export default function SubmitBtn() {
       className="group relative flex items-center justify-center gap-3 h-12 px-8 
                  bg-gradient-to-br from-cyan-600 via-cyan to-fuchsia-cyan 
                  hover:from-cyan-500 hover:via-cyan hover:to-cyan-500
-                 text-white font-semibold rounded-2xl
+                 text-slate-900 dark:text-white font-semibold rounded-2xl
                  shadow-lg shadow-cyan/25 hover:shadow-cyan/40
                  border border-black-300 backdrop-blur-md
                  transition-all duration-300 ease-out

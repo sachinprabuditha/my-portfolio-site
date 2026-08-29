@@ -11,7 +11,6 @@ import TailwindIcon from "@/public/tail.svg";
 import MongoDbIcon from "@/public/mongo-svgrepo-com.svg";
 import Java from "@/public/Java.svg";
 import Sql from "@/public/MySQL.svg";
-import PythonIcon from "@/public/tail.svg";
 import KotlinIcon from "@/public/kotlin-svgrepo-com.svg";
 import FirebaseIcon from "@/public/firebase-svgrepo-com.svg";
 import AndroidStudioIcon from "@/public/Android Studio.svg";
@@ -71,7 +70,6 @@ export const skillsData = [
   { name: "Next.js", icon: NextJsIcon },
   { name: "Node.js", icon: NodeJsIcon },
   { name: "SQL", icon: Sql }, // Add an icon for SQL if available
-  { name: "Python", icon: PythonIcon },
   { name: "JAVA", icon: Java }, // Add an icon for JAVA if available
   { name: "C", icon: C }, // Add an icon for C if available
   { name: "C++", icon: Cpp }, // Add an icon for C++ if available

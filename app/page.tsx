@@ -30,7 +30,7 @@ export default function Home() {
 
 
   return (
-    <main className="relative bg-gradient-to-br from-slate-900 via-purple-900/10 to-slate-900 flex flex-col overflow-x-hidden min-h-screen w-full">
+    <main className="relative bg-gradient-to-br from-slate-50 via-purple-100/50 to-slate-100 dark:from-slate-900 dark:via-purple-900/10 dark:to-slate-900 transition-colors duration-300 flex flex-col overflow-x-hidden min-h-screen w-full">
       <div className="w-full">
         <Hero />
         
@@ -39,37 +39,37 @@ export default function Home() {
           <Grid/>
         </div>
 
-        <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
+        <hr className="w-full max-w-6xl mx-auto border-t border-purple-300/50 dark:border-purple-800/30 my-12" />
         
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
           <Experience/>
         </div>
 
-        <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
+        <hr className="w-full max-w-6xl mx-auto border-t border-purple-300/50 dark:border-purple-800/30 my-12" />
 
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
           <Certificates/>
         </div>
 
-        <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
+        <hr className="w-full max-w-6xl mx-auto border-t border-purple-300/50 dark:border-purple-800/30 my-12" />
         
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
           <Education/>
         </div>
 
-        <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
+        <hr className="w-full max-w-6xl mx-auto border-t border-purple-300/50 dark:border-purple-800/30 my-12" />
         
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
           <Skills/>
         </div>
 
-        <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
+        <hr className="w-full max-w-6xl mx-auto border-t border-purple-300/50 dark:border-purple-800/30 my-12" />
 
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
           <RecentProjects/>
         </div>
 
-        <hr className="w-full max-w-6xl mx-auto border-t border-purple-800/30 my-12" />
+        <hr className="w-full max-w-6xl mx-auto border-t border-purple-300/50 dark:border-purple-800/30 my-12" />
         
         <div className="px-4 sm:px-6">
           <Contact/>

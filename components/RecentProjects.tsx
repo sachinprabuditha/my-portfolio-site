@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Github, ExternalLink, Code, Calendar, Users, Star } from 'lucide-react';
+import React, { useState, useRef, useMemo } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { Github, ExternalLink, Calendar, Users } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -29,7 +30,7 @@ const projects = [
     id: 1,
     title: "Singhe Automotive Pvt LTD",
     des: "Developed on the MERN stack technology(React, Node.js, Express, MongoDB). This is a Vehicle Service Management System built to SLIIT 2nd Year 2nd Semester IT Project.",
-    img: "./mern-vsms (3)3.png",
+    img: "/mern-vsms (3)3.png",
     category: "Full Stack",
     year: "2024",
     status: "Completed",
@@ -54,13 +55,13 @@ const projects = [
     id: 2,
     title: "VisionCart",
     des: "Developed a voice-controlled shopping app for visually impaired users, text-to-speech. My role included user registration, profile management, and user management.",
-    img: "./VisionCart1.jpg",
+    img: "/VisionCart1.jpg",
     category: "Mobile App",
     year: "2024",
     status: "Completed",
     team: "4 developers",
     duration: "2 months",
-    techStack: ["Flutter", "Dart", "Firebase", "Speech Recognition", "Firebase"],
+    techStack: ["Flutter", "Dart", "Firebase", "Speech Recognition"],
     features: [
       "Voice-controlled navigation",
       "Text-to-speech integration",
@@ -79,7 +80,7 @@ const projects = [
     id: 3,
     title: "EcoCollect",
     des: "Developed an intelligent system to streamline waste collection in urban environments. The solution monitors waste bin levels, manages collection schedules dynamically, and classifies waste into categories such as e-waste, plastic, and organic.",
-    img: "./EcoCollector (2).png",
+    img: "/EcoCollector (2).png",
     category: "Mobile App",
     year: "2024",
     status: "Completed",
@@ -104,7 +105,7 @@ const projects = [
     id: 4,
     title: "X-Clone",
     des: "X-Clone is an Social Media Application designed from clonning X(Twitter). X-Clone aims to facilitate the creation, sharing and aggregation of content, ideas, interests.",
-    img: "./-Clone.png",
+    img: "/-Clone.png",
     category: "Full Stack",
     year: "2024",
     status: "Completed",
@@ -129,7 +130,7 @@ const projects = [
     id: 5,
     title: "PetPal",
     des: "Pet Pal is a mobile app designed to help pet owners manage their pets' health and well-being. It offers features like pet registration, vaccination tracking, doctor appointment booking, pet adoption, and a community platform for pet owners to connect and share advice.",
-    img: "./PetPal.jpg",
+    img: "/PetPal.jpg",
     category: "Mobile App",
     year: "2024",
     status: "Completed",
@@ -154,7 +155,7 @@ const projects = [
     id: 6,
     title: "ToDo",
     des: "ToDo is task management Android mobile application developed individually by using Kotlin and Android Studio as part of the 2nd Year 2nd Semester MAD module.",
-    img: "./ToDo (1).png",
+    img: "/ToDo (1).png",
     category: "Mobile App",
     year: "2023",
     status: "Completed",
@@ -179,7 +180,7 @@ const projects = [
     id: 7,
     title: "CareQueue",
     des: "CareQueue is an innovative e-channeling system designed using Java and SQL. This is a Project of the 2nd Year 1st Semester Object-Oriented Programming (OOP) module.",
-    img: "./CareQueue Logo.png",
+    img: "/CareQueue Logo.png",
     category: "Full Stack",
     year: "2023",
     status: "Completed",
@@ -204,7 +205,7 @@ const projects = [
     id: 8,
     title: "LandValt",
     des: "LandValt is a comprehensive online land sales platform developed by using HTML, PHP, CSS and SQL as part of the 1st Year 2nd semester IWT module.",
-    img: "./Screenshot 2023-05-19 004618.png",
+    img: "/Screenshot 2023-05-19 004618.png",
     category: "Full Stack",
     year: "2023",
     status: "Completed",
@@ -229,7 +230,7 @@ const projects = [
     id: 9,
     title: "Flying Blaster",
     des: "Flying Blaster is an Android mobile game developed individually by using Kotlin and Android Studio as part of the 2nd Year 2nd Semester MAD module.",
-    img: "./ToDo (2).png",
+    img: "/ToDo (2).png",
     category: "Game",
     year: "2024",
     status: "Completed",
@@ -254,7 +255,7 @@ const projects = [
     id: 10,
     title: "MovieApp",
     des: "MovieApp is an Android mobile Application designed to provide information about movies to enhance the experience and information, reviews, and ratings.",
-    img: "./ToDo (3).png",
+    img: "/ToDo (3).png",
     category: "Mobile App",
     year: "2024",
     status: "Completed",
@@ -277,7 +278,7 @@ const projects = [
   }
 ];
 
-const categories = ["Full Stack", "Mobile App", "Game"];
+const categories = ["All", "Full Stack", "Mobile App", "Game"];
 
 const ProjectCard = ({ project, index }: { project: Project, index: number }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -287,64 +288,58 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
   return (
     <motion.div
       ref={ref}
+      layout
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+      transition={{ duration: 0.6, delay: index * 0.08 }}
       className="group relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden rounded-2xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-slate-700 transition-all duration-500">
+      <div className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-slate-900/50 backdrop-blur-sm border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-500">
         {/* Animated background gradient */}
         <div className={`absolute inset-0 bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
         
         {/* Project image */}
         <div className="relative h-48 overflow-hidden">
-          <motion.img
+          <Image
             src={project.img}
-            alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            animate={isHovered ? { scale: 1.05 } : { scale: 1 }}
+            alt={`${project.title} screenshot`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
           />
-          
-          {/* Overlay with quick actions */}
+
+          {/* Overlay with quick action */}
           <motion.div
-            className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute inset-0 bg-black/60 flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.3 }}
           >
-            <div className="flex gap-4">
-              <motion.a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Github className="w-5 h-5 text-white" />
-              </motion.a>
-              <motion.a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ExternalLink className="w-5 h-5 text-white" />
-              </motion.a>
-            </div>
+            <motion.a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${project.title} source on GitHub`}
+              className="flex items-center gap-2 px-5 py-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors text-slate-900 dark:text-white text-sm font-medium"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Github className="w-5 h-5" />
+              View Source
+            </motion.a>
           </motion.div>
           
           {/* Status badge */}
           <div className="absolute top-4 right-4">
             <span className={`px-3 py-1 rounded-full text-xs font-medium ${
               project.status === 'Production' 
-                ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
+                ? 'bg-green-500/20 text-green-600 dark:text-green-400 border border-green-500/30' 
                 : project.status === 'Beta'
-                ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
-                : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                ? 'bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 border border-yellow-500/30'
+                : 'bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30'
             }`}>
               {project.status}
             </span>
@@ -356,27 +351,27 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
           {/* Header */}
           <div className="flex items-start justify-between mb-3">
             <div>
-              <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-cyan-700 dark:group-hover:text-cyan-400 transition-colors">
                 {project.title}
               </h3>
-              <span className="text-sm text-cyan-400 font-medium">{project.category}</span>
+              <span className="text-sm text-cyan-700 dark:text-cyan-400 font-medium">{project.category}</span>
             </div>
             <div className="text-right">
-              <div className="text-sm text-slate-400">{project.year}</div>
+              <div className="text-sm text-slate-500 dark:text-slate-400">{project.year}</div>
             </div>
           </div>
 
           {/* Description */}
-          <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed">
             {project.des}
           </p>
 
           {/* Key features */}
           <div className="mb-4">
-            <h4 className="text-sm font-medium text-white mb-2">Key Features</h4>
+            <h4 className="text-sm font-medium text-slate-900 dark:text-white mb-2">Key Features</h4>
             <div className="grid grid-cols-2 gap-1 text-xs">
               {project.features.slice(0, 4).map((feature, i) => (
-                <div key={i} className="flex items-center text-slate-400">
+                <div key={i} className="flex items-center text-slate-500 dark:text-slate-400">
                   <div className="w-1 h-1 bg-cyan-400 rounded-full mr-2" />
                   {feature}
                 </div>
@@ -387,16 +382,16 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
           {/* Metrics */}
           {/* <div className="grid grid-cols-3 gap-4 mb-4 p-3 bg-slate-800/50 rounded-lg">
             <div className="text-center">
-              <div className="text-sm font-bold text-white">{project.metrics.users}</div>
-              <div className="text-xs text-slate-400">Users</div>
+              <div className="text-sm font-bold text-slate-900 dark:text-white">{project.metrics.users}</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">Users</div>
             </div>
             <div className="text-center">
-              <div className="text-sm font-bold text-white">{project.metrics.performance}</div>
-              <div className="text-xs text-slate-400">Uptime</div>
+              <div className="text-sm font-bold text-slate-900 dark:text-white">{project.metrics.performance}</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">Uptime</div>
             </div>
             <div className="text-center">
-              <div className="text-sm font-bold text-white">{project.metrics.rating}</div>
-              <div className="text-xs text-slate-400">Rating</div>
+              <div className="text-sm font-bold text-slate-900 dark:text-white">{project.metrics.rating}</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">Rating</div>
             </div>
           </div> */}
 
@@ -405,20 +400,20 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
             {project.techStack.slice(0, 4).map((tech, i) => (
               <span
                 key={i}
-                className="px-2 py-1 bg-slate-800 text-slate-300 rounded-md text-xs hover:bg-slate-700 transition-colors"
+                className="px-2 py-1 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-md text-xs hover:bg-slate-700 transition-colors"
               >
                 {tech}
               </span>
             ))}
             {project.techStack.length > 4 && (
-              <span className="px-2 py-1 bg-slate-800 text-slate-300 rounded-md text-xs">
+              <span className="px-2 py-1 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-md text-xs">
                 +{project.techStack.length - 4} more
               </span>
             )}
           </div>
 
           {/* Project details */}
-          <div className="flex items-center justify-between text-xs text-slate-400 pt-3 border-t border-slate-800">
+          <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 pt-3 border-t border-slate-200 dark:border-slate-800">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-1">
                 <Users className="w-3 h-3" />
@@ -433,7 +428,7 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition-colors"
+              className="flex items-center gap-1 text-cyan-700 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
               whileHover={{ x: 5 }}
             >
               View Project
@@ -447,69 +442,84 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
 };
 
 const ModernProjectsSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Full Stack");
-  const [filteredProjects, setFilteredProjects] = useState(
-    projects.filter(project => project.category === "Full Stack")
-  );
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category);
-    setFilteredProjects(projects.filter(project => project.category === category));
-  };
+  // Derived from the selection rather than mirrored in a second state, which
+  // could otherwise drift out of sync with `selectedCategory`.
+  const filteredProjects = useMemo(
+    () =>
+      selectedCategory === "All"
+        ? projects
+        : projects.filter((project) => project.category === selectedCategory),
+    [selectedCategory]
+  );
 
   return (
     <section className="" id="projects">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            Featured{" "}
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Projects
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 rounded-full bg-slate-900/5 dark:bg-white/5 border border-cyan-600/30 dark:border-cyan-500/25 text-cyan-700 dark:text-cyan-300 text-xs font-semibold tracking-[0.2em] uppercase backdrop-blur-sm">
+            Portfolio
+          </span>
+          <h2 className="text-4xl md:text-6xl font-black pb-1 mb-5 tracking-tight">
+            <span className="text-transparent bg-gradient-to-r from-slate-900 via-cyan-700 to-purple-800 dark:from-white dark:via-cyan-300 dark:to-purple-400 bg-clip-text">
+              Featured Projects
             </span>
-          </motion.h2>
-          <motion.p
-            className="text-slate-400 text-lg max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          </h2>
+          <p className="text-lg md:text-xl text-slate-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Showcasing innovative solutions built with modern technologies and best practices
-          </motion.p>
+          </p>
+          <motion.div
+            className="h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 mx-auto mt-8 rounded-full"
+            initial={{ width: 0 }}
+            whileInView={{ width: 96 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          />
         </motion.div>
 
         {/* Category Filter */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-3 mb-12"
         >
-          {categories.map((category) => (
-            <motion.button
-              key={category}
-              onClick={() => handleCategoryChange(category)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                selectedCategory === category
-                  ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/25'
-                  : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {category}
-            </motion.button>
-          ))}
+          {categories.map((category) => {
+            const isActive = selectedCategory === category;
+            const count =
+              category === "All"
+                ? projects.length
+                : projects.filter((p) => p.category === category).length;
+            return (
+              <motion.button
+                key={category}
+                type="button"
+                aria-pressed={isActive}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 border ${
+                  isActive
+                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-transparent shadow-lg shadow-cyan-500/25'
+                    : 'bg-slate-900/5 dark:bg-white/5 text-slate-600 dark:text-gray-300 border-slate-900/10 dark:border-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 hover:text-slate-900 dark:hover:text-white hover:border-cyan-400/40'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {category}
+                <span className={`ml-2 text-xs ${isActive ? 'text-slate-600 dark:text-white/70' : 'text-slate-500 dark:text-gray-500'}`}>
+                  {count}
+                </span>
+              </motion.button>
+            );
+          })}
         </motion.div>
 
         {/* Projects Grid */}
@@ -517,9 +527,11 @@ const ModernProjectsSection = () => {
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
         >
-          {filteredProjects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </AnimatePresence>
         </motion.div>
 
         {/* Call to Action */}

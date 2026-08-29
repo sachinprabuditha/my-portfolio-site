@@ -26,7 +26,18 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+      },
       colors: {
+        // Cinematic dark palette for the editorial redesign
+        ink: {
+          950: "#06060a",
+          900: "#0a0a12",
+          850: "#0e0e18",
+          800: "#141421",
+        },
         black: {
           DEFAULT: "#000",
           100: "#000319",

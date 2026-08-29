@@ -1,13 +1,25 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import ThemeContextProvider from "@/context/theme-context";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Toaster } from "react-hot-toast";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+// Italic serif used for the editorial accent words in section headings.
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: "italic",
+  variable: "--font-serif",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Sachin's Portfolio",
@@ -20,21 +32,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ThemeContextProvider>
+    // suppressHydrationWarning is required by next-themes: it sets the theme
+    // class on <html> before React hydrates, which would otherwise mismatch.
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${instrumentSerif.variable} font-sans`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
           <ActiveSectionContextProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="dark"
-              enableSystem
-              disableTransitionOnChange
-            >
-              {children}
-              <Toaster position="top-right" />
-            </ThemeProvider>
+            {children}
+            <Toaster position="top-right" />
           </ActiveSectionContextProvider>
-        </ThemeContextProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
