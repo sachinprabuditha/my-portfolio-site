@@ -259,11 +259,11 @@ const Hero = () => {
 
                 {/* Meta chips */}
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 mb-7">
-                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-600/30 dark:border-cyan-500/25 text-cyan-200 text-xs md:text-sm font-medium backdrop-blur-sm">
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-600/30 dark:border-cyan-500/25 text-cyan-800 dark:text-cyan-200 text-xs md:text-sm font-medium backdrop-blur-sm">
                     <FaMapMarkerAlt className="w-3.5 h-3.5 text-cyan-700 dark:text-cyan-400" />
                     Sri Lanka
                   </span>
-                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/25 text-purple-200 text-xs md:text-sm font-medium backdrop-blur-sm">
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/25 text-purple-800 dark:text-purple-200 text-xs md:text-sm font-medium backdrop-blur-sm">
                     <FaGraduationCap className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
                     Software Engineering @ SLIIT
                   </span>
@@ -305,7 +305,7 @@ const Hero = () => {
               }`}>
                 {/* Primary: Download Resume */}
                 <a
-                  href="/Sachin_Prabuditha-CV.pdf"
+                  href="/Sachin_Prabuditha_CV (2).pdf"
                   download="Sachin_Prabuditha-CV.pdf"
                   className="group relative inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl font-semibold text-slate-900 dark:text-white overflow-hidden shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-cyan-500/40"
                 >

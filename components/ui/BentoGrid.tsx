@@ -56,6 +56,13 @@ export const BentoGridItem = ({
 
   const [copied, setCopied] = useState(false);
 
+  // Cards with a full-bleed background image render their text over artwork,
+  // so theme-following text colours would vanish (dark text on a dark image in
+  // light mode). Those keep light text plus a scrim in both themes.
+  // id 6 sits on the animated gradient backdrop, which is dark in both themes.
+  const overArtwork =
+    (Boolean(img) && (imgClassName ?? "").includes("w-full")) || id === 6;
+
   const handleCopy = () => {
     const text = "sachinprabuditha@gmail.com";
     navigator.clipboard.writeText(text);
@@ -104,6 +111,10 @@ export const BentoGridItem = ({
           </BackgroundGradientAnimation>
         )}
 
+        {overArtwork && (
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+        )}
+
         <div
           className={cn(
             titleClassName,
@@ -111,13 +122,13 @@ export const BentoGridItem = ({
           )}
         >
           {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-slate-600 dark:text-[#C1C2D3] z-10">
+          <div className={`font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm z-10 ${overArtwork ? "text-white/80" : "text-slate-600 dark:text-[#C1C2D3]"}`}>
             {description}
           </div>
           {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
           {/* remove mb-2 mt-2 */}
           <div
-            className={`font-sans text-lg lg:text-2xl max-w-96 font-bold z-10 text-slate-900 dark:text-white`}
+            className={`font-sans text-lg lg:text-2xl max-w-96 font-bold z-10 ${overArtwork ? "text-white drop-shadow-lg" : "text-slate-900 dark:text-white"}`}
           >
             {title}
           </div>
@@ -133,20 +144,20 @@ export const BentoGridItem = ({
             {['React.js', 'Next.js', 'TypeScript'].map((item, i) => (
               <span
                 key={item}
-                className="py-2 px-3 text-xs opacity-50 
+                className="py-2 px-3 text-xs text-slate-700 dark:text-white/70 
                  rounded-lg text-center bg-slate-200 dark:bg-[#10132E]"
               >
                 {item}
               </span>
             ))}
-            <span className="py-4 px-3  rounded-lg text-center bg-slate-200 dark:bg-[#10132E]"></span>
+            <span className="py-4 px-3  rounded-lg text-center bg-slate-200/60 dark:bg-[#10132E]"></span>
           </div>
           <div className="flex flex-col gap-4">
-            <span className="py-4 px-3  rounded-lg text-center bg-slate-200 dark:bg-[#10132E]"></span>
+            <span className="py-4 px-3  rounded-lg text-center bg-slate-200/60 dark:bg-[#10132E]"></span>
             {['MongoDB','JavaScript','JAVA'].map((item, i) => (
               <span
                 key={item}
-                className="py-2 px-3 text-xs opacity-50 
+                className="py-2 px-3 text-xs text-slate-700 dark:text-white/70 
                  rounded-lg text-center bg-slate-200 dark:bg-[#10132E]"
               >
                 {item}

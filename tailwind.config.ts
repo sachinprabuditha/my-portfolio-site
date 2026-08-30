@@ -52,7 +52,10 @@ const config = {
         blue: {
           "100": "#E4ECFF",
         },
-        purple: "#CBACF9",
+        // Merge the brand purple in as DEFAULT instead of replacing the scale.
+        // A bare `purple: "#CBACF9"` wiped out purple-100..900, so every
+        // `to-purple-500`, `text-purple-400`, etc. silently produced no CSS.
+        purple: { ...colors.purple, DEFAULT: "#CBACF9" },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

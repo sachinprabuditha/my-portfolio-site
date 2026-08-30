@@ -353,7 +353,7 @@ export const SoftwareEngineerHeader = () => {
               
               <div className="space-y-2">
                 <a
-                  href="./Sachin_Prabuditha-CV.pdf"
+                  href="./Sachin_Prabuditha_CV (2).pdf"
                   download
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="flex items-center justify-center space-x-2 w-full px-4 py-3 bg-gradient-to-r from-indigo-600 to-cyan-600 text-slate-900 dark:text-white font-medium rounded-lg transition-all duration-300 hover:scale-105"

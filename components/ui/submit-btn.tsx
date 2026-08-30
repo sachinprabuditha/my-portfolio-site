@@ -9,15 +9,15 @@ export default function SubmitBtn() {
     <button
       type="submit"
       className="group relative flex items-center justify-center gap-3 h-12 px-8 
-                 bg-gradient-to-br from-cyan-600 via-cyan to-fuchsia-cyan 
-                 hover:from-cyan-500 hover:via-cyan hover:to-cyan-500
+                 bg-gradient-to-br from-cyan-600 via-blue-600 to-purple-600 
+                 hover:from-cyan-500 hover:via-blue-500 hover:to-purple-500
                  text-slate-900 dark:text-white font-semibold rounded-2xl
-                 shadow-lg shadow-cyan/25 hover:shadow-cyan/40
-                 border border-black-300 backdrop-blur-md
+                 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40
+                 border border-white/20 backdrop-blur-md
                  transition-all duration-300 ease-out
                  hover:scale-105 hover:-translate-y-0.5
                  active:scale-95 active:translate-y-0
-                 focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-offset-2 focus:ring-offset-transparent
+                 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-transparent
                  disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:translate-y-0
                  overflow-hidden"
       disabled={pending}

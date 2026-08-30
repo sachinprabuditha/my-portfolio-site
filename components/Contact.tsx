@@ -45,7 +45,7 @@ export default function Contact() {
       <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 rounded-full bg-slate-900/5 dark:bg-white/5 border border-cyan-600/30 dark:border-cyan-500/25 text-cyan-700 dark:text-cyan-300 text-xs font-semibold tracking-[0.2em] uppercase backdrop-blur-sm">
         Get in touch
       </span>
-      <h2 className="text-4xl md:text-5xl font-black pb-1 mb-5 tracking-tight">
+      <h2 className="text-4xl md:text-5xl font-black leading-[1.15] pb-1 mb-5 tracking-tight">
         <span className="text-transparent bg-gradient-to-r from-slate-900 via-cyan-700 to-purple-800 dark:from-white dark:via-cyan-300 dark:to-purple-400 bg-clip-text">
           Let&apos;s Build Something Amazing Together
         </span>

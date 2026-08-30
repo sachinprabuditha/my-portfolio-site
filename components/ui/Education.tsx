@@ -224,7 +224,7 @@ const Education: React.FC<EducationProps> = ({ className = "" }) => {
           </span>
           <h2
             id="education-heading"
-            className="text-4xl md:text-6xl font-black pb-1 mb-5 tracking-tight"
+            className="text-4xl md:text-6xl font-black leading-[1.15] pb-1 mb-5 tracking-tight"
           >
             <span className="text-transparent bg-gradient-to-r from-slate-900 via-cyan-700 to-purple-800 dark:from-white dark:via-cyan-300 dark:to-purple-400 bg-clip-text">
               Education
