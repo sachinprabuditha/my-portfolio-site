@@ -1,17 +1,20 @@
 "use client";
 
 import { HomeIcon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaArrowUp, FaDownload, FaLinkedin, FaGithub, FaCode, FaBars, FaTimes, FaTerminal, FaHome, FaBriefcase, FaFolderOpen, FaGraduationCap, FaUser, FaRocket } from "react-icons/fa";
 import { FaAccusoft, FaInstagram, FaMedium, FaCertificate } from "react-icons/fa6";
 import { SiStackoverflow } from "react-icons/si";
 import ThemeToggle from "./ThemeToggle";
+import GooeyNav from "./ui/GooeyNav";
+import DepthText from "./ui/DepthText";
 
 // Enhanced Software Engineer Header Component
 export const SoftwareEngineerHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeNavIndex, setActiveNavIndex] = useState(0);
+  const lastNavClickRef = useRef(0);
   const [typewriterText, setTypewriterText] = useState('');
   const [currentRole, setCurrentRole] = useState(0);
 
@@ -64,6 +67,56 @@ export const SoftwareEngineerHeader = () => {
     { name: 'Education', href: '#education', icon: FaGraduationCap },
     { name: 'Projects', href: '#projects', icon: FaFolderOpen }
   ];
+
+  // GooeyNav has no icon slot in its item shape, so the desktop nav trades the
+  // icons for the liquid-morph active indicator; the mobile menu below keeps them.
+  const gooeyItems = navItems.map((item) => ({ label: item.name, href: item.href }));
+
+  // Scroll-spy: highlight whichever section is currently centred in the
+  // viewport. A section counts as "active" once it crosses a thin band
+  // roughly a third of the way down the screen (the large negative
+  // rootMargin on both edges), which avoids the flicker you'd get comparing
+  // raw visibility percentages as sections of very different heights scroll
+  // past. Suppressed for a short window after a nav click so clicking
+  // "Projects" doesn't flash through every section it scrolls past on the
+  // way there.
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.href.slice(1)))
+      .filter((el) => el !== null);
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (Date.now() - lastNavClickRef.current < 700) return;
+
+        const visible = entries.filter((entry) => entry.isIntersecting);
+        if (visible.length === 0) return;
+
+        // If several sections intersect the band at once, prefer the one
+        // nearest the top of the viewport.
+        const topMost = visible.reduce((a, b) =>
+          a.boundingClientRect.top <= b.boundingClientRect.top ? a : b
+        );
+        const index = sections.indexOf(topMost.target as HTMLElement);
+        if (index !== -1) setActiveNavIndex(index);
+      },
+      { rootMargin: '-35% 0px -55% 0px', threshold: 0 }
+    );
+
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Marks the grace-period window and jumps the indicator to the clicked
+  // item immediately, rather than waiting for the scroll position to catch
+  // up with the (possibly smooth-scrolling) anchor jump.
+  const handleNavClick = (index: number) => {
+    lastNavClickRef.current = Date.now();
+    setActiveNavIndex(index);
+  };
 
   const socialLinks = [
     { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sachinprabuditha/', color: 'hover:text-blue-600 dark:hover:text-blue-400', label: 'LinkedIn' },
@@ -233,8 +286,21 @@ export const SoftwareEngineerHeader = () => {
               </div> */}
               {/* Show name section on all screen sizes with responsive text */}
               <div className="block">
-                <h1 className="text-sm sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-slate-900 via-indigo-700 to-cyan-700 dark:from-white dark:via-indigo-200 dark:to-cyan-200 bg-clip-text text-transparent animate-gradient-shift">
-                  Sachin Prabuditha
+                <h1 className="leading-none">
+                  <DepthText
+                    text="Sachin Prabuditha"
+                    className="header-name-depth"
+                    fontSize="clamp(0.875rem, 1.1rem + 0.4vw, 1.25rem)"
+                    fontWeight={700}
+                    layers={8}
+                    depth={1}
+                    tilt={4}
+                    perspective={600}
+                    orbitSpeed={0.25}
+                    faceColor="#0f172a"
+                    depthColor="#4338ca"
+                    shadow
+                  />
                 </h1>
                 <p className="text-xs sm:text-xs text-slate-600 dark:text-gray-400 font-medium">
                   <span className="inline-block min-w-[100px] sm:min-w-[140px]">
@@ -246,21 +312,31 @@ export const SoftwareEngineerHeader = () => {
             </div>
 
             {/* Enhanced Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-2 animate-slide-in" style={{ animationDelay: '0.2s' }}>
-              {navItems.map((item, index) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="relative group px-3 py-2 text-sm font-medium text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white transition-all duration-300 rounded-lg hover-lift"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <span className="relative z-10 flex items-center space-x-2">
-                    <span>{item.name}</span>
-                  </span>
-                  <div className="absolute inset-0 hover:bg-slate-900/5 dark:hover:bg-white/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center group-hover:border group-hover:border-indigo-500/50" />
-                </a>
-              ))}
-            </nav>
+            <div
+              className="hidden lg:block animate-slide-in"
+              style={{ animationDelay: '0.2s' }}
+              onClickCapture={(e) => {
+                // GooeyNav owns its own click handling internally; this only
+                // needs to know WHICH item was clicked, to start the
+                // scroll-spy grace period and jump the indicator instantly
+                // rather than waiting for the anchor scroll to catch up.
+                const anchor = (e.target as HTMLElement).closest('a');
+                if (!anchor) return;
+                const index = gooeyItems.findIndex((item) => item.href === anchor.getAttribute('href'));
+                if (index !== -1) handleNavClick(index);
+              }}
+            >
+              <GooeyNav
+                items={gooeyItems}
+                activeIndex={activeNavIndex}
+                particleCount={15}
+                particleDistances={[80, 10]}
+                particleR={90}
+                animationTime={600}
+                timeVariance={300}
+                colors={[1, 2, 3, 4]}
+              />
+            </div>
 
             {/* Enhanced Actions */}
             <div className="flex items-center space-x-2 sm:space-x-3 animate-slide-in" style={{ animationDelay: '0.4s' }}>

@@ -1,0 +1,143 @@
+/*
+ * Site-specific theming for the vendored GooeyNav.css (React Bits).
+ * Kept as a separate file, imported after GooeyNav.css, so the vendored file
+ * stays byte-for-byte diffable against upstream.
+ *
+ * Only the idle (non-active) label colour genuinely needs a light/dark split:
+ * it's hardcoded white upstream, which disappears against this header's
+ * light-mode glass background. Everything else - the white active pill, the
+ * black active label, the particle colours - survives both themes unmodified.
+ * That's because the pill and particles are composited via
+ * mix-blend-mode: lighten against a solid-black backdrop *inside* the effect
+ * layer's own isolated stacking context (created implicitly by its `filter`
+ * property), so whatever sits behind the nav on the page never factors into
+ * how they look. `lighten` always resolves a pure-white source to white,
+ * regardless of backdrop, and vivid brand hues survive the contrast() step
+ * that creates the gooey-merge look.
+ *
+ * !important is used because this file and the vendored GooeyNav.css select
+ * these rules at identical specificity, so the winner depends on import
+ * order rather than intent - a load-order-proof way to guarantee this file
+ * wins is worth the specificity bump here.
+ */
+
+.gooey-nav-container nav ul {
+  gap: 0.15em !important;
+  padding: 0 !important;
+}
+
+/*
+ * `color` is inherited, so this override needs to target `li` directly, not
+ * just the parent `ul`: the vendored CSS gives `li` its own explicit
+ * `color: white` (`.gooey-nav-container nav ul li { ...; color: white; }`),
+ * and an element's own specified value always wins over an inherited one
+ * from an ancestor - regardless of !important on the ancestor's rule, since
+ * !important only affects direct competition on the SAME element, not what
+ * gets inherited down from it. (First tried overriding just `ul`; the idle
+ * labels stayed white because of exactly this.)
+ */
+.gooey-nav-container nav ul li {
+  color: #334155 !important; /* slate-700, for light mode */
+}
+
+html.dark .gooey-nav-container nav ul li {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.gooey-nav-container nav ul li a {
+  padding: 0.55em 0.9em !important;
+  font-size: 0.8125rem !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+/*
+ * `.effect.text` is a floating duplicate GooeyNav positions exactly over the
+ * active item to carry the label during transitions - it's a bare <span>
+ * with no font styling of its own, so it was inheriting this component's
+ * ambient (larger) font-size instead of matching the <a> above. Two
+ * differently-sized copies of the same word stacked on top of each other is
+ * the double-vision/ghosting look - worse on longer words like "Experience"
+ * where the size mismatch compounds across more characters. Must match the
+ * <a> override exactly (font-size, weight, line-height) or the two layers
+ * drift apart again.
+ */
+.gooey-nav-container .effect.text {
+  font-size: 0.8125rem !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.gooey-nav-container {
+  /* Custom properties inherit to the dynamically-created .particle elements,
+     which are appended as descendants of this container at runtime. */
+  --color-1: #22d3ee; /* cyan */
+  --color-2: #a855f7; /* purple */
+  --color-3: #6366f1; /* indigo */
+  --color-4: #ec4899; /* pink */
+}
+
+/*
+ * The oversized decoy box (`.effect.filter::before`, inset -75px, solid
+ * black) is meant to be cancelled out by `mix-blend-mode: lighten` on its
+ * parent so it reads as invisible - lighten(black, anything) = anything.
+ * That only works if the blend can "see" all the way through to the actual
+ * page background behind it. In this header it can't: the header is
+ * `position: fixed` with its own `backdrop-filter`, and both of those
+ * create an isolated compositing layer, trapping the blend inside instead
+ * of letting it reach the page. The box then paints as plain opaque black -
+ * a large rectangle over the nav and whatever sits behind the header.
+ *
+ * Fix: suppress the decoy outright. The gooey pill and particle colours
+ * (white pill, brand-coloured particles) are untouched by this - only the
+ * oversized invisible-by-design backdrop box is removed.
+ */
+.gooey-nav-container .effect.filter::before {
+  content: none !important;
+}
+
+
+/*
+ * Active pill: glassy instead of solid white.
+ *
+ * There are actually TWO pill layers here upstream: `li.active::after` (a
+ * plain element, normal compositing, always renders correctly) sits behind
+ * the nav text, and `.effect.filter::after` (an identical white pill, but
+ * routed through the same broken `mix-blend-mode: lighten` group as the
+ * ::before decoy above) is layered on top of it and paints later. Since that
+ * blend also can't reach the page here, it was rendering as a second, fully
+ * opaque white shape stacked on top - which is why the pill looked like flat
+ * solid white rather than anything glassy, no matter how the first layer is
+ * styled underneath.
+ *
+ * Fix: remove the broken top layer entirely (same treatment as ::before)
+ * and do the visible styling on the reliable bottom layer instead. The
+ * click-triggered particle burst still uses the filter/blur/contrast/lighten
+ * group as vendored - only the persistent resting pill is affected.
+ */
+.gooey-nav-container .effect.filter::after {
+  content: none !important;
+}
+
+.gooey-nav-container nav ul li::after {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(168, 85, 247, 0.18)) !important;
+  border: 1px solid rgba(34, 211, 238, 0.35) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  box-shadow: 0 2px 10px rgba(34, 211, 238, 0.15) !important;
+}
+
+/* Active label colour: the vendored black-on-white assumption doesn't hold
+   once the pill is a translucent tint rather than solid white, and the
+   readable colour differs by theme since the header's own backdrop does. */
+.gooey-nav-container .effect.text.active,
+.gooey-nav-container nav ul li.active {
+  color: #0e7490 !important; /* cyan-700 - reads on the light-mode glass header */
+}
+
+html.dark .gooey-nav-container .effect.text.active,
+html.dark .gooey-nav-container nav ul li.active {
+  color: #67e8f9 !important; /* cyan-300 - reads on the dark-mode glass header */
+}

@@ -114,9 +114,8 @@ export const educationData = [
     duration: "2006 - 2019",
     details: [
       "I attended Hungama Vijayaba National College from my Primary Education through the Advanced Level Examinations",
-      "This school played a crucial role in my academic journey, contributing significantly to my success in the Ordinary Level examinations (In English Medium) where I achieved high grades, with A grades in 6 subjects and B grades in 2 subjects and a C grade. (A-6, B-2, C-1)",
-      "During this period, I selected Combine Maths, Physics, and ICT as my subjects.",
-      "This strategic choice not only facilitated my successful attainment of a B Pass and 2 S Passes (BSS) in the Advanced Level examinations but also paved the way for the realization of my aspirations to enter university.",
+      "This school played a crucial role in my academic journey, contributing significantly to my success in the Ordinary Level examinations (In English Medium) where I achieved high grades.",
+      "During this period, I selected Combined Maths, Physics, and ICT as my subjects.",
     ],
     logo: Scl,
   },

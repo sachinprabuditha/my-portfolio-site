@@ -16,7 +16,7 @@ const workExperience = [
       "Transitioned from intern to full-time Junior Software Engineer role",
       "Continued development on financial applications for banking clients"
     ],
-    skills: ["Flutter", "Dart", "API Integration", "Git", "Agile"],
+    skills: ["Flutter", "Dart", "API Integration", "Git", "Agile", "Firebase"],
     color: "from-cyan-600 to-purple",
     icon: Zap
   },
@@ -29,8 +29,8 @@ const workExperience = [
     type: "Internship",
     description: "PayMedia is a rapidly evolving Financial Technology (Fin-Tech) company in Sri Lanka, started with the aim of providing the best caliber of total software solutions for banks and other institutes. While keeping the focus on Fin-Tech, the company wants people to trust and enjoy the convenience of digital technology and disrupt the payment processes in the country and around the world.",
     achievements: [
-      "Developed and deployed a mobile application for a major banking client (Fintrex Finance Mobile App) using Flutter",
-      "Helped optimize the Comercial Credit app's performance"
+      "Developed and deployed a mobile application for a major banking client using Flutter",
+      "Helped optimize the major banking app's performance"
     ],
     skills: ["Flutter", "API Integration", "Dart", "Git"],
     color: "from-cyan-600 to-purple-800",
@@ -163,7 +163,7 @@ const Experience = () => {
   };
 
   return (
-    <section className="relative min-h-screen">
+    <section id="experience" className="relative min-h-screen">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {particles.map((p, i) => (

@@ -71,7 +71,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className='relative min-h-screen overflow-hidden'>
+    <div id="home" className='relative min-h-screen overflow-hidden'>
       <ModernHeader />
      {/* Enhanced CSS Animations */}
       <style jsx>{`

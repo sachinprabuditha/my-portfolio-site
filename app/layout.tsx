@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Toaster } from "react-hot-toast";
+import CursorEffect from "@/components/CursorEffect";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({
         >
           <ActiveSectionContextProvider>
             {children}
+            <CursorEffect />
             <Toaster position="top-right" />
           </ActiveSectionContextProvider>
         </ThemeProvider>
