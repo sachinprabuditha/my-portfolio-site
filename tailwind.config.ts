@@ -29,8 +29,17 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         serif: ["var(--font-serif)", "Georgia", "serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
       },
       colors: {
+        // Palette lifted from evekayser.com.br: black canvas, cyan -> mint accent.
+        brand: {
+          cyan: "#2cf8ff",
+          mint: "#18ffb0",
+          deep: "#051819",
+          offwhite: "#f1f3f4",
+          muted: "#96a7a1",
+        },
         // Cinematic dark palette for the editorial redesign
         ink: {
           950: "#06060a",
@@ -160,6 +169,19 @@ const config = {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
+        marquee: {
+          to: { transform: "translateX(-50%)" },
+        },
+        "spin-slow": {
+          to: { transform: "rotate(360deg)" },
+        },
+        // Footer email underline: shrinks out to the right, then grows back from the left.
+        wipe: {
+          "0%": { transform: "scaleX(1)", transformOrigin: "right" },
+          "50%": { transform: "scaleX(0)", transformOrigin: "right" },
+          "50.1%": { transform: "scaleX(0)", transformOrigin: "left" },
+          "100%": { transform: "scaleX(1)", transformOrigin: "left" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -173,6 +195,10 @@ const config = {
         fifth: "moveInCircle 20s ease infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        marquee: "marquee var(--marquee-duration, 40s) linear infinite",
+        "spin-slow": "spin-slow 14s linear infinite",
+        "orbit": "spin-slow 18s linear infinite",
+        wipe: "wipe 1s ease-in-out",
       },
       backdropBlur: {
         'none': 'none',

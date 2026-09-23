@@ -78,7 +78,11 @@
 }
 @layer base {
   * {
-    @apply border-border !scroll-smooth;
+    @apply border-border;
+  }
+  /* Native smooth anchors only as a fallback; Lenis (below) takes over when it runs. */
+  html {
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;
@@ -109,9 +113,79 @@
   }
 
   .bg-grid-pattern {
-    background-image: 
+    background-image:
       linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
+  }
+
+  /* Cyan -> mint accent, used for active nav links and highlighted words. */
+  .text-gradient {
+    background-image: linear-gradient(90deg, #2cf8ff, #18ffb0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass {
+    background-color: rgba(89, 91, 115, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+:root {
+  /* Width of the fixed white strip on the right edge (desktop only). */
+  --strip-w: max(7vw, 5.5rem);
+}
+
+/* Fluid sizing, as on the reference: between 992px and 1440px the root font size
+   tracks the viewport, so every rem-based size scales with the window. */
+@media (min-width: 992px) and (max-width: 1440px) {
+  html {
+    font-size: 1.1111vw;
+  }
+}
+
+/* Lenis smooth scrolling. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Visible keyboard focus everywhere (mouse clicks don't trigger :focus-visible). */
+:focus-visible {
+  outline: 2px solid #2cf8ff;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #2cf8ff;
+  color: #000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-spin-slow,
+  .animate-orbit,
+  [class*="animate-[spin-slow"] {
+    animation: none !important;
   }
 }

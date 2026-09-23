@@ -1,95 +1,49 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { FaArrowUp } from "react-icons/fa";
-import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
-import RecentProjects from "@/components/RecentProjects";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import Skills from "@/components/Skills";
-import Education from "@/components/ui/Education";
-import Experience from "@/components/Experience";
-import Certificates from "@/components/Certificates";
+import SmoothScroll from "@/components/site/SmoothScroll";
+import Loader from "@/components/site/Loader";
+import { MobileNav, StickyNav } from "@/components/site/Navbar";
+import SideStrip from "@/components/site/SideStrip";
+import Hero from "@/components/site/Hero";
+import Stats from "@/components/site/Stats";
+import Showcase from "@/components/site/Showcase";
+import About from "@/components/site/About";
+import Work from "@/components/site/Work";
+import Experience from "@/components/site/Experience";
+import Education from "@/components/site/Education";
+import Services from "@/components/site/Services";
+import Skills from "@/components/site/Skills";
+import Certificates from "@/components/site/Certificates";
+import Contact from "@/components/site/Contact";
+import Footer from "@/components/site/Footer";
 
 export default function Home() {
-  const [showButton, setShowButton] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowButton(window.scrollY > 300);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-
   return (
-    <main className="relative bg-gradient-to-br from-slate-50 via-purple-100/50 to-slate-100 dark:from-slate-900 dark:via-purple-900/10 dark:to-slate-900 transition-colors duration-300 flex flex-col overflow-x-hidden min-h-screen w-full">
-      <div className="w-full">
-        <Hero />
-        
-        {/* Enhanced Section Dividers */}      
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-          <Grid/>
-        </div>
-
-        <hr className="w-full max-w-6xl mx-auto border-t border-purple-300/50 dark:border-purple-800/30 my-12" />
-        
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-          <Experience/>
-        </div>
-
-        <hr className="w-full max-w-6xl mx-auto border-t border-purple-300/50 dark:border-purple-800/30 my-12" />
-
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-          <Certificates/>
-        </div>
-
-        <hr className="w-full max-w-6xl mx-auto border-t border-purple-300/50 dark:border-purple-800/30 my-12" />
-        
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-          <Education/>
-        </div>
-
-        <hr className="w-full max-w-6xl mx-auto border-t border-purple-300/50 dark:border-purple-800/30 my-12" />
-        
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-          <Skills/>
-        </div>
-
-        <hr className="w-full max-w-6xl mx-auto border-t border-purple-300/50 dark:border-purple-800/30 my-12" />
-
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-          <RecentProjects/>
-        </div>
-
-        <hr className="w-full max-w-6xl mx-auto border-t border-purple-300/50 dark:border-purple-800/30 my-12" />
-        
-        <div className="px-4 sm:px-6">
-          <Contact/>
-        </div>
-
-        <Footer/>
-
+    <>
+      <SmoothScroll />
+      <Loader />
+      <MobileNav />
+      <SideStrip />
+      {/* On desktop the fixed side strip takes the right edge, so the page reserves its width. */}
+      <div className="lg:pr-[var(--strip-w)]">
+        {/* Content sits above the sticky footer and scrolls away to reveal it. */}
+        <main id="main" className="relative z-10 overflow-x-clip rounded-b-[2.5rem] bg-black shadow-[0_40px_120px_rgba(70,154,253,0.18)]">
+          <Hero />
+          {/* Desktop nav sits right after the hero and sticks once scrolled to (reference layout). */}
+          <StickyNav />
+          <Stats />
+          <Showcase />
+          <About />
+          <Work />
+          <Experience />
+          <Education />
+          <Services />
+          <Skills />
+          <Certificates />
+          <Contact />
+        </main>
+        <Footer />
       </div>
-
-      {/* Enhanced Back to Top Button */}
-      {showButton && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white p-4 rounded-2xl shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-purple-500/25 z-50"
-          style={{ backdropFilter: "blur(20px)" }}
-        >
-          <FaArrowUp className="w-5 h-5 group-hover:animate-bounce" />
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 rounded-2xl blur opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
-        </button>
-      )}
-    </main>
+    </>
   );
 }
