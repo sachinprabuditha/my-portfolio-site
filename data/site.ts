@@ -8,7 +8,7 @@ export const contact = {
   )}`,
   linkedin: "https://www.linkedin.com/in/sachinprabuditha/",
   github: "https://github.com/sachinprabuditha",
-  cv: "/Sachin_Prabuditha_CV (2).pdf",
+  cv: "/Sachin_Prabuditha_CV.pdf",
 };
 
 export const navLinks = [
@@ -22,19 +22,20 @@ export const navLinks = [
 ] as const;
 
 export const aboutPoints = [
-  "Junior Software Engineer at PayMedia, building fintech mobile apps for banking clients in Sri Lanka.",
-  "Reading for a BSc (Hons) in IT, specialising in Software Engineering, at SLIIT (2022 – present).",
-  "10+ projects shipped across Flutter, MERN, Next.js and native Android with Kotlin.",
-  "Built VisionCart, a voice-controlled shopping app for visually impaired users.",
-  "Certified in 100 Days of DevOps (KodeKloud) and AI/ML Engineering, Stages 1 & 2 (SLIIT).",
-  "Designs in Figma first, so interfaces are thought through before a line of code is written.",
-  "Based in Sri Lanka, flexible across time zones and happy to collaborate remotely.",
+  "Building mobile banking applications with Flutter and Dart in the FinTech industry at PayMedia.",
+  "Started as an intern at PayMedia, working on real-world mobile applications with Flutter, Firebase, API integration, Git and Android development.",
+  "Progressed to Junior Software Engineer, taking greater responsibility for developing, improving and maintaining production mobile applications.",
+  "Beyond mobile, I enjoy exploring backend development, cloud technologies, DevOps, CI/CD and system design.",
+  "Worked with JavaScript, TypeScript, React, Node.js, MongoDB, MySQL, AWS, Docker, Kubernetes and GitHub Actions.",
+  "Graduated in September 2026 with a BSc (Hons) in Information Technology, specializing in Software Engineering, from SLIIT.",
+  "Through academic and personal projects, I keep experimenting with new technologies and turning ideas into working software.",
+  "I enjoy solving practical problems, learning how systems work behind the scenes, and continuously improving the way I build software.",
 ];
 
 export const projects = [
   {
     title: "Singhe Automotive",
-    des: "Vehicle service management system on the MERN stack — real-time service scheduling, inventory, customer portal and analytics dashboard.",
+    des: "Vehicle service management system on the MERN stack - real-time service scheduling, inventory, customer portal and analytics dashboard.",
     img: "/mern-vsms (3)3.png",
     category: "Full Stack",
     year: "2024",
@@ -128,16 +129,16 @@ export const experience = [
   {
     title: "Junior Software Engineer",
     company: "PayMedia Pvt Ltd",
-    period: "Sep 2025 — Present",
+    period: "Sep 2025 - Present",
     type: "Full-time",
     description:
       "Building and maintaining mobile and web applications that power digital payments for banks and financial institutions.",
     skills: ["Flutter", "Dart", "API Integration", "Firebase", "Agile"],
   },
   {
-    title: "Software Engineer Intern — Mobile",
+    title: "Software Engineer Intern - Mobile",
     company: "PayMedia Pvt Ltd",
-    period: "Mar 2025 — Sep 2025",
+    period: "Mar 2025 - Sep 2025",
     type: "Internship",
     description:
       "Developed and shipped a Flutter banking app for a major client and helped optimise its performance, leading to a full-time offer.",
@@ -164,7 +165,7 @@ export const services = [
   },
   {
     title: "DevOps & Cloud",
-    body: "CI/CD, Linux, containers and deployments — sharpened through KodeKloud's 100 Days of DevOps.",
+    body: "CI/CD, Linux, containers and deployments - sharpened through KodeKloud's 100 Days of DevOps.",
   },
   {
     title: "AI / ML",
@@ -180,13 +181,13 @@ export const certificates = [
     image: "/5f490d5c-4e03-4423-92d0-f6c67b04d0e0.jpg",
   },
   {
-    title: "AI/ML Engineer — Stage 2",
+    title: "AI/ML Engineer - Stage 2",
     issuer: "SLIIT",
     date: "Dec 2024",
     image: "/1733158116047.jpeg",
   },
   {
-    title: "AI/ML Engineer — Stage 1",
+    title: "AI/ML Engineer - Stage 1",
     issuer: "SLIIT",
     date: "Jul 2024",
     image: "/1721240316004.jpeg",
@@ -195,19 +196,19 @@ export const certificates = [
 
 export const education = [
   {
-    degree: "BSc (Hons) in Information Technology, specialising in Software Engineering",
-    institution: "Sri Lanka Institute of Information Technology — Malabe",
-    period: "Oct 2022 — Present",
+    degree: "BSc (Hons) in Information Technology, specializing in Software Engineering",
+    institution: "Sri Lanka Institute of Information Technology - Malabe",
+    period: "Oct 2022 - Sep 2026",
     logo: "/Sliit.png",
     details: [
-      "Currently reading for a BSc (Hons) in IT with a Software Engineering specialisation.",
+      "Graduated in September 2026 with a BSc (Hons) in IT, specializing in Software Engineering.",
       "Active in university clubs and delivered team projects across web, mobile and desktop.",
     ],
   },
   {
     degree: "Primary Education to Advanced Level",
-    institution: "H/ Vijayaba National School — Hungama",
-    period: "2006 — 2019",
+    institution: "H/ Vijayaba National School - Hungama",
+    period: "2006 - 2019",
     logo: "/download.png",
     details: [
       "Achieved high grades at the Ordinary Level examinations in the English medium.",

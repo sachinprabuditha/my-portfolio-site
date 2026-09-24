@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa6";
 import { contact } from "@/data/site";
-import { Eyebrow, MainButton, RotatingBadge } from "./primitives";
+import { Eyebrow, LogoMark, MainButton, RotatingBadge } from "./primitives";
 import { TopBar } from "./Navbar";
 
 // Hero copy fades in as the preloader finishes (reference: 1s opacity at the end of the load).
@@ -55,33 +55,35 @@ export default function Hero() {
           {/* Positioned by a wrapper: the badge itself is `relative`, which would override `absolute`. */}
           <div className="absolute bottom-16 -left-4 z-[6] sm:-left-10 lg:-left-20">
             <RotatingBadge items={["Software engineer", "Flutter", "Next.js"]} size={160}>
-              <span className="font-display text-2xl font-semibold text-white">SP</span>
+              <LogoMark className="h-9 w-auto" />
             </RotatingBadge>
           </div>
         </motion.div>
 
         <div className="relative z-10 order-1 flex flex-col items-start lg:order-2">
           <motion.div {...fadeIn(0)}>
-            <Eyebrow>Software Engineer &amp; Flutter Developer</Eyebrow>
+            <Eyebrow>Flutter • Dart • FinTech • Software Engineering</Eyebrow>
           </motion.div>
 
           <motion.h1
             {...fadeIn(0.1)}
             className="mt-6 font-display text-[2.75rem] font-medium leading-[1.1] text-white sm:text-6xl lg:text-[4rem]"
           >
-            Building mobile &amp; web products people love to use
+            Building ideas into software.
           </motion.h1>
 
-          <motion.p {...fadeIn(0.2)} className="mt-6 max-w-[27rem] text-lg text-white/80 md:text-xl">
-            I&apos;m Sachin Prabuditha, a software engineer at PayMedia turning complex ideas into intuitive
-            products that you and your users love
-            <span className="relative -top-2 ml-0.5 text-xs text-brand-mint" aria-hidden="true">
-              ♡
-            </span>
-            .
-          </motion.p>
+          <motion.div {...fadeIn(0.2)} className="mt-6 flex max-w-[30rem] flex-col gap-4">
+            <p className="text-lg text-white/80 md:text-xl">
+              I&apos;m Sachin Prabuditha, a Software Engineer specializing in Flutter and mobile application
+              development.
+            </p>
+            <p className="text-base text-white/60 md:text-lg">
+              From mobile banking applications in FinTech to personal projects across web, backend, and DevOps, I
+              enjoy turning ideas into practical software and learning something new with every project.
+            </p>
+          </motion.div>
 
-          <motion.div {...fadeIn(0.3)} className="mt-12 flex flex-col items-start gap-5">
+          <motion.div {...fadeIn(0.3)} className="mt-10 flex flex-col items-start gap-5">
             <MainButton
               href={contact.whatsapp}
               target="_blank"

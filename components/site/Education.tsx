@@ -19,7 +19,7 @@ export default function Education() {
             </h2>
           </div>
           <p className="max-w-xs text-white/60">
-            The foundations behind the work — from maths and physics to software engineering.
+            The foundations behind the work from maths and physics to software engineering.
           </p>
         </Reveal>
 

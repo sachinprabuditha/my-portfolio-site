@@ -119,7 +119,7 @@ export default function Certificates() {
             )}
           </div>
           <p className="mt-8 max-w-4xl text-xl leading-normal text-black md:text-[1.75rem]">
-            Continuous learning alongside day-to-day engineering — from DevOps pipelines to applied machine learning.
+            Continuous learning alongside day-to-day engineering - from DevOps pipelines to applied machine learning.
           </p>
         </Reveal>
       </div>

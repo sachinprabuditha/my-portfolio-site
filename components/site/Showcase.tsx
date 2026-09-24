@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { projects } from "@/data/site";
-import { Marquee, Reveal, RotatingBadge } from "./primitives";
+import { LogoMark, Marquee, Reveal, RotatingBadge } from "./primitives";
 
 const rows = [projects.slice(0, 4), projects.slice(4, 7), projects.slice(7)];
 
@@ -41,7 +41,7 @@ export default function Showcase() {
                 Sachin Prabuditha
               </span>
               <RotatingBadge items={["Software engineer", "Flutter", "Next.js"]} size={140}>
-                <span className="font-display text-xl font-semibold text-white">SP</span>
+                <LogoMark className="h-9 w-auto" />
               </RotatingBadge>
             </span>
           ))}

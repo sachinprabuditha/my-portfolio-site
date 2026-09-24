@@ -21,12 +21,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Sachin Prabuditha — Software Engineer",
+  title: "Sachin Prabuditha - Software Engineer",
   description:
-    "Software engineer from Sri Lanka building Flutter apps, full-stack web platforms and interfaces people love to use.",
+    "Sachin Prabuditha, a Software Engineer from Sri Lanka specializing in Flutter and mobile application development, building mobile banking apps in FinTech.",
   openGraph: {
-    title: "Sachin Prabuditha — Software Engineer",
-    description: "Flutter apps, full-stack web platforms and interfaces people love to use.",
+    title: "Sachin Prabuditha - Software Engineer",
+    description: "Building ideas into software. Flutter • Dart • FinTech • Software Engineering.",
     type: "website",
   },
 };

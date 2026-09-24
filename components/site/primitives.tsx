@@ -230,6 +230,29 @@ export function Logo({ className = "", gradient = false }: { className?: string;
   );
 }
 
+/**
+ * The "s." mark from the favicon (app/icon.svg / apple-icon.png): the same Space Grotesk
+ * glyph path and cyan→mint dot, without the dark tile, cropped to the letterforms.
+ */
+export function LogoMark({ className = "" }: { className?: string }) {
+  const id = React.useId();
+  return (
+    <svg viewBox="12 17.5 40 31" className={className} role="img" aria-label="Sachin Prabuditha logo">
+      <defs>
+        <linearGradient id={id} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="#2cf8ff" />
+          <stop offset="1" stopColor="#18ffb0" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M26.28 46.57Q21.29 46.57 18.06 44.39Q14.84 42.20 14.16 37.99L19.67 36.59Q20.04 38.56 20.97 39.71Q21.91 40.85 23.29 41.32Q24.67 41.79 26.28 41.79Q28.72 41.79 29.94 40.90Q31.17 40.02 31.17 38.67Q31.17 37.26 30.00 36.59Q28.83 35.91 26.43 35.44L24.82 35.18Q22.17 34.66 19.99 33.75Q17.80 32.84 16.48 31.26Q15.15 29.67 15.15 27.23Q15.15 23.48 17.93 21.46Q20.71 19.43 25.24 19.43Q29.55 19.43 32.36 21.35Q35.17 23.28 36.00 26.50L30.49 28.16Q30.07 25.98 28.67 25.07Q27.27 24.16 25.24 24.16Q23.16 24.16 22.04 24.89Q20.92 25.62 20.92 26.97Q20.92 28.32 22.07 29.00Q23.21 29.67 25.13 29.98L26.75 30.30Q29.61 30.82 31.92 31.65Q34.23 32.48 35.59 34.04Q36.94 35.60 36.94 38.25Q36.94 42.26 34.05 44.41Q31.17 46.57 26.28 46.57Z"
+        fill="#ffffff"
+      />
+      <circle cx="44.64" cy="41.37" r="5.2" fill={`url(#${id})`} />
+    </svg>
+  );
+}
+
 export function ArrowRight({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} className={className} aria-hidden="true">

@@ -20,7 +20,7 @@ export default function About() {
         <Reveal className="mb-16 flex max-w-3xl flex-col gap-6">
           <Eyebrow>About me</Eyebrow>
           <h2 className="font-display text-4xl font-medium leading-[1.1] text-white md:text-[3.25rem]">
-            From classroom projects to banking apps — I care about shipping things that work and feel good to use.
+            I&apos;m Sachin Prabuditha, a Software Engineer from Sri Lanka focused on mobile application development.
           </h2>
         </Reveal>
 

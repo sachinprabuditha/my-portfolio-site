@@ -40,7 +40,7 @@ function AvailablePill() {
       href={contact.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Available for work — chat on WhatsApp"
+      aria-label="Available for work - chat on WhatsApp"
       className="flex items-center gap-3.5 overflow-hidden rounded-[3.75rem] border border-white/10 bg-[#041718] px-6 py-4 transition-colors hover:border-brand-mint/40"
     >
       <span className="relative flex h-2 w-2 flex-none">
@@ -64,7 +64,7 @@ export function TopBar() {
   return (
     <div className="absolute inset-x-0 top-0 z-20 hidden lg:block">
       <div className="mx-auto flex w-[93%] max-w-7xl items-center justify-between pt-5">
-        <a href="#home" aria-label="Sachin Prabuditha — home">
+        <a href="#home" aria-label="Sachin Prabuditha - home">
           <Logo gradient className="text-[1.75rem]" />
         </a>
         <div className="flex items-center gap-12">
@@ -150,7 +150,7 @@ export function MobileNav() {
     <header ref={headerRef} className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 lg:hidden">
       <div className="relative w-full max-w-[60rem]">
         <div className="flex items-center gap-2.5 rounded-[5rem] border border-white/10 bg-[#04130ecc] p-2.5 backdrop-blur-[30px]">
-          <a href="#home" className="shrink-0 pl-4 pr-2" aria-label="Sachin Prabuditha — back to top">
+          <a href="#home" className="shrink-0 pl-4 pr-2" aria-label="Sachin Prabuditha - back to top">
             <Logo gradient />
           </a>
           <a

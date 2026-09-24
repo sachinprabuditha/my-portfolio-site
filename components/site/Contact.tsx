@@ -74,7 +74,7 @@ export default function Contact() {
                 toast.error(error);
                 return;
               }
-              toast.success("Message sent — thanks!");
+              toast.success("Message sent, thanks!");
               formRef.current?.reset();
             }}
           >

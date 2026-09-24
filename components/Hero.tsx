@@ -305,7 +305,7 @@ const Hero = () => {
               }`}>
                 {/* Primary: Download Resume */}
                 <a
-                  href="/Sachin_Prabuditha_CV (2).pdf"
+                  href="/Sachin_Prabuditha_CV.pdf"
                   download="Sachin_Prabuditha-CV.pdf"
                   className="group relative inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl font-semibold text-slate-900 dark:text-white overflow-hidden shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-cyan-500/40"
                 >
