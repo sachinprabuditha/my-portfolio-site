@@ -219,8 +219,7 @@ export const education = [
 
 // Badges that loop down the fixed white strip on the right edge (desktop only).
 export const stripBadges = [
-  { label: "Flutter Developer", icon: "flutter" },
-  { label: "Full-stack Engineer", icon: "next" },
-  { label: "DevOps Certified", icon: "docker" },
-  { label: "AI/ML Engineer", icon: "ai" },
+  { label: "Software Engineer", icon: "flutter" },
+  { label: "Flutter Developer", icon: "next" },
+  { label: "Full-stack Engineer", icon: "docker" },
 ] as const;

@@ -65,7 +65,7 @@ export function TopBar() {
     <div className="absolute inset-x-0 top-0 z-20 hidden lg:block">
       <div className="mx-auto flex w-[93%] max-w-7xl items-center justify-between pt-5">
         <a href="#home" aria-label="Sachin Prabuditha - home">
-          <Logo gradient className="text-[1.75rem]" />
+          <Logo className="text-[1.75rem]" />
         </a>
         <div className="flex items-center gap-12">
           <nav aria-label="Profiles" className="flex items-center gap-8">
