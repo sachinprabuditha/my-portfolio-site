@@ -3,6 +3,22 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+/**
+ * Live `matchMedia` result. Uses useSyncExternalStore (rather than setState in an effect)
+ * so it stays in sync if the preference changes. Returns `false` during server rendering.
+ */
+export function useMediaQuery(query: string) {
+  return React.useSyncExternalStore(
+    (onChange) => {
+      const mql = window.matchMedia(query);
+      mql.addEventListener("change", onChange);
+      return () => mql.removeEventListener("change", onChange);
+    },
+    () => window.matchMedia(query).matches,
+    () => false
+  );
+}
+
 /** Infinite horizontal loop. Children are rendered twice so the -50% shift is seamless. */
 export function Marquee({
   children,

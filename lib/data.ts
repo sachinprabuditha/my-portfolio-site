@@ -1,4 +1,3 @@
-import React from "react";
 import HtmlIcon from "@/public/html-5-svgrepo-com.svg";
 import CssIcon from "@/public/css-3-svgrepo-com.svg";
 import JsIcon from "@/public/javascript-svgrepo-com.svg";
@@ -26,40 +25,12 @@ import Ps from "@/public/photoshop-svgrepo-com.svg"
 import Il from "@/public/adobe-illustrator-svgrepo-com.svg"
 import R from "@/public/R.svg"
 import Inso from "@/public/Insomnia.svg"
-import Scl from "@/public/download.png"
-import Sliit from "@/public/Sliit.png"
 import motion from "@/public/fm.svg";
 import flutter from "@/public/Flutter.svg";
 import dart from "@/public/Dart.svg";
 import vercel from "@/public/Vercel.svg";
 
-export const links = [
-  {
-    name: "Home",
-    hash: "#home",
-  },
-  {
-    name: "About",
-    hash: "#about",
-  },
-  {
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
-    name: "Skills",
-    hash: "#skills",
-  },
-  {
-    name: "Experience",
-    hash: "#experience",
-  },
-  {
-    name: "Contact",
-    hash: "#contact",
-  },
-] as const;
-
+// Icons for the Skills marquee (components/site/Skills.tsx).
 
 export const skillsData = [
   { name: "HTML", icon: HtmlIcon },
@@ -95,33 +66,3 @@ export const skillsData = [
   { name: "Dart", icon: dart },
   
 ] as const;
-
-// data.js or data.ts
-export const educationData = [
-  {
-    institution: "Sri Lanka Institute of Information Technology - Malabe",
-    degree: "BSc (Hons) in Information Technology Specializing in Software Engineering",
-    duration: "Oct 2022 - Present",
-    details: [
-      "I am currently pursuing a Bachelor of Science (Hons) in Information Technology degree Specializing in Software Engineering.",
-      "Throughout my university tenure, I have actively contributed to various clubs and successfully executed numerous projects, showcasing my dedication and proficiency in both academic and practical domains.",
-    ],
-    logo: Sliit,
-  },
-  {
-    institution: "H/ Vijayaba National School - Hungama",
-    degree: "Primary Education to Advanced level",
-    duration: "2006 - 2019",
-    details: [
-      "I attended Hungama Vijayaba National College from my Primary Education through the Advanced Level Examinations",
-      "This school played a crucial role in my academic journey, contributing significantly to my success in the Ordinary Level examinations (In English Medium) where I achieved high grades.",
-      "During this period, I selected Combined Maths, Physics, and ICT as my subjects.",
-    ],
-    logo: Scl,
-  },
-] as const;
- 
-
-export function map(arg0: (skill: string | number | bigint | boolean | Promise<React.AwaitedReactNode> | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | import("framer-motion").MotionValue<number> | import("framer-motion").MotionValue<string> | null | undefined, index: React.Key | null | undefined) => React.JSX.Element): React.ReactNode {
-    throw new Error("Function not implemented.");
-}

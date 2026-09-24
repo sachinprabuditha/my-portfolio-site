@@ -12,7 +12,8 @@ import { TopBar } from "./Navbar";
 const fadeIn = (delay = 0) => ({
   initial: { opacity: 0, y: 16 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 1, delay: 2 + delay, ease: [0.22, 1, 0.36, 1] },
+  // `as const` keeps the cubic-bezier a 4-tuple (framer-motion 12 rejects a plain number[]).
+  transition: { duration: 1, delay: 2 + delay, ease: [0.22, 1, 0.36, 1] as const },
 });
 
 export default function Hero() {

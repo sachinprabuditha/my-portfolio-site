@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Logo } from "./primitives";
+import { Logo, useMediaQuery } from "./primitives";
 
 const DURATION_MS = 2000; // reference: fill + counter run for 2s
 
@@ -12,13 +12,13 @@ const DURATION_MS = 2000; // reference: fill + counter run for 2s
  */
 export default function Loader() {
   const [progress, setProgress] = useState(0);
-  const [done, setDone] = useState(false);
+  const [finished, setFinished] = useState(false);
+  // Users who prefer reduced motion skip the intro entirely.
+  const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
+  const done = finished || reducedMotion;
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setDone(true);
-      return;
-    }
+    if (reducedMotion) return;
     document.documentElement.style.overflow = "hidden";
     const start = performance.now();
     let frame = 0;
@@ -26,11 +26,11 @@ export default function Loader() {
       const t = Math.min(1, (now - start) / DURATION_MS);
       setProgress(Math.round((1 - Math.pow(1 - t, 2)) * 100));
       if (t < 1) frame = requestAnimationFrame(tick);
-      else setTimeout(() => setDone(true), 200);
+      else setTimeout(() => setFinished(true), 200);
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, []);
+  }, [reducedMotion]);
 
   useEffect(() => {
     if (done) document.documentElement.style.overflow = "";

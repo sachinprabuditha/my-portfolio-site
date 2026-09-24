@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
 import { HiOutlineMail } from "react-icons/hi";
 import { contact } from "@/data/site";
-import { ArrowUpRight, Logo, Marquee } from "./primitives";
+import { ArrowUpRight, Logo, Marquee, useMediaQuery } from "./primitives";
 
 const socials = [
   { name: "Email", href: `mailto:${contact.email}`, Icon: HiOutlineMail },
@@ -21,16 +21,12 @@ const socials = [
  */
 function LetsTalk() {
   const ref = useRef<HTMLAnchorElement>(null);
-  const [finePointer, setFinePointer] = useState(false);
+  const finePointer = useMediaQuery("(hover: hover) and (pointer: fine)");
   const [hovered, setHovered] = useState(false);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const sx = useSpring(x, { stiffness: 150, damping: 20, mass: 0.4 });
   const sy = useSpring(y, { stiffness: 150, damping: 20, mass: 0.4 });
-
-  useEffect(() => {
-    setFinePointer(window.matchMedia("(hover: hover) and (pointer: fine)").matches);
-  }, []);
 
   const onMove = (e: React.PointerEvent) => {
     const rect = ref.current?.getBoundingClientRect();

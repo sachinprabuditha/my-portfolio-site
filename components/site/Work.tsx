@@ -45,17 +45,17 @@ export default function Work() {
                 <div className="flex flex-1 flex-col rounded-lg bg-white/5 px-5 py-[1.125rem] text-white">
                   <div className="flex items-center justify-between gap-4">
                     <span className="relative block overflow-hidden text-[1.5rem] font-bold leading-[1.1] md:text-[1.65rem]">
-                      <span className="block transition-transform duration-700 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:-translate-y-[102%]">
+                      <span className="block transition-transform duration-700 ease-out-cubic group-hover:-translate-y-[102%]">
                         {project.title}
                       </span>
                       <span
                         aria-hidden="true"
-                        className="absolute left-0 top-[102%] block transition-transform duration-700 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:-translate-y-[102%]"
+                        className="absolute left-0 top-[102%] block transition-transform duration-700 ease-out-cubic group-hover:-translate-y-[102%]"
                       >
                         {project.title}
                       </span>
                     </span>
-                    <ArrowRight className="h-5 w-5 flex-none transition-transform duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:-rotate-45" />
+                    <ArrowRight className="h-5 w-5 flex-none transition-transform duration-500 ease-out-cubic group-hover:-rotate-45" />
                   </div>
 
                   <p className="mt-3 flex items-center gap-2 leading-[1.1] text-white/80">
